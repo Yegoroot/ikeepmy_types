@@ -26,6 +26,10 @@ export type Role = Roles[keyof Roles]
 // SIGNUP 
 // ----------------------------------------------------------
 
+export interface VerifyNumberBody {
+  phone: string
+}
+
 export enum SignUpFields {
   name='name',
   phone='phone',
@@ -54,15 +58,5 @@ export enum SignInFields {
 export interface SignInLoginBody {
   [SignInFields.phone]: string
   [SignInFields.password]: string
-}
-
-// ----------------------------------------------------------
-// SIGIN / SIGNUP RESPONSE
-// ----------------------------------------------------------
-
-export interface SignByLoginSuccessResponse {
-  user: User,
-  token: string
-  success: true
 }
 
