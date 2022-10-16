@@ -1,6 +1,6 @@
 {
   "name": "ikeepmycommontypes",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Types for admin, api, mobile app ",
   "main": "index.js",
   "scripts": {

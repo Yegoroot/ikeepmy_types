@@ -58,6 +58,6 @@ export interface SignByLoginSuccessResponse {
 
 // Verify response
 export type ErrorVerifyResponse = ErrorResponse<
-ResponseMessage.SMS_ERROR_VERIFY_PHONE_1 | 
-ResponseMessage.SMS_ERROR_VERIFY_PHONE_2 | 
+ResponseMessage.SMS_ERROR_SENDED_PHONE_1 | 
+ResponseMessage.SMS_ERROR_SENDED_PHONE_2 | 
 'unknown'>
