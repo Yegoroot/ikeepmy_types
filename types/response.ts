@@ -7,8 +7,6 @@ import {User} from './user'
 export interface SuccessResponse<T> {
   data: T | null,
   success: true
-  count?: number
-  total?: number
 }
 
 export interface ErrorResponse<T = string> {
@@ -57,8 +55,3 @@ export interface SignByLoginSuccessResponse {
   token: string
   success: true
 }
-
-// ERROR VERIFY RESPONSE
-export type ErrorVerifyResponse = ErrorResponse<
-ResponseMessage.SMS_ERROR_VERIFY_PHONE_1 | 
-ResponseMessage.SMS_ERROR_VERIFY_PHONE_2>
