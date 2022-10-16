@@ -43,20 +43,20 @@ export enum ResponseMessage {
   PROVIDE_ALL_DATA = 'provide_all_data'
 }
 
-
-
 // ----------------------------------------------------------
 // Routes
 // ----------------------------------------------------------
 
 // SIGIN / SIGNUP RESPONSE
-export interface SignByLoginSuccessResponse {
+export interface SuccessSignByLoginResponse {
   user: User,
   token: string
   success: true
 }
 
-// Verify response
+// VERIFY SUCCESS RESPONSE
+export type SuccessVerifyResponse = SuccessResponse<ResponseMessage.SMS_SENDED_PHONE>
+// VERIFY ERROR RESPONSE
 export type ErrorVerifyResponse = ErrorResponse<
 ResponseMessage.SMS_ERROR_SENDED_PHONE_1 | 
 ResponseMessage.SMS_ERROR_SENDED_PHONE_2 | 
