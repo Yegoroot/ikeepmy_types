@@ -28,5 +28,7 @@ export interface SuccessSignByLoginResponse {
     token: string;
     success: true;
 }
+export declare type ErrorLoginResponse = ErrorResponse<typeof RESPONSE_MESSAGES.INVALID_CREDENTIALS | 'unknown'>;
+export declare type ErrorSignupResponse = ErrorResponse<typeof RESPONSE_MESSAGES.SMS_ERROR_VERIFY_PHONE_1 | typeof RESPONSE_MESSAGES.SMS_ERROR_VERIFY_PHONE_2 | 'unknown'>;
 export declare type SuccessVerifyResponse = SuccessResponse<typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE>;
 export declare type ErrorVerifyResponse = ErrorResponse<typeof RESPONSE_MESSAGES.SMS_ERROR_SENDED_PHONE_1 | typeof RESPONSE_MESSAGES.SMS_ERROR_SENDED_PHONE_2 | 'unknown'>;

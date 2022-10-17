@@ -49,17 +49,28 @@ export const RESPONSE_MESSAGES = {
 // Routes
 // ----------------------------------------------------------
 
-// SIGIN / SIGNUP RESPONSE
+// SIGIN | SIGNUP 
 export interface SuccessSignByLoginResponse {
   user: User,
   token: string
   success: true
 }
+// LOGIN
+export type ErrorLoginResponse = ErrorResponse<
+  typeof RESPONSE_MESSAGES.INVALID_CREDENTIALS | 
+  'unknown'>
 
-// VERIFY SUCCESS RESPONSE
-export type SuccessVerifyResponse = SuccessResponse<typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE>
-// VERIFY ERROR RESPONSE
-export type ErrorVerifyResponse = ErrorResponse<
-typeof RESPONSE_MESSAGES.SMS_ERROR_SENDED_PHONE_1 | 
-typeof RESPONSE_MESSAGES.SMS_ERROR_SENDED_PHONE_2 | 
-'unknown'>
+// SIGNUP
+export type ErrorSignupResponse = ErrorResponse<
+  typeof RESPONSE_MESSAGES.SMS_ERROR_VERIFY_PHONE_1 | 
+  typeof RESPONSE_MESSAGES.SMS_ERROR_VERIFY_PHONE_2 | 
+  'unknown'>
+
+// VERIFY 
+export type SuccessVerifyResponse = SuccessResponse<
+  typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE>
+
+export type ErrorVerifyResponse = ErrorResponse< 
+  typeof RESPONSE_MESSAGES.SMS_ERROR_SENDED_PHONE_1 | 
+  typeof RESPONSE_MESSAGES.SMS_ERROR_SENDED_PHONE_2 | 
+  'unknown'>
