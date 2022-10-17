@@ -5,14 +5,16 @@ exports.RESPONSE_MESSAGES = void 0;
 // MESSAGES
 // ----------------------------------------------------------
 exports.RESPONSE_MESSAGES = {
-    // registration & verify-phone
+    // verify-phone (before regisrtation)
     SMS_SENDED_PHONE: 'we_sended_code_in_your_phone',
-    SMS_ERROR_SENDED_PHONE_1: 'error_sending_code_in_your_phone_1',
-    SMS_ERROR_SENDED_PHONE_2: 'error_sending_code_in_your_phone_2',
-    SMS_ERROR_VERIFY_PHONE_1: 'error_verify_code_in_your_phone_1',
-    SMS_ERROR_VERIFY_PHONE_2: 'error_verify_code_in_your_phone_2',
+    ERROR_NUMBER_IS_EXIST: 'error_number_is_exist',
+    ERROR_SENDED_SMS_FOR_VERIFY_1: 'error_sending_code_for_verify_1',
+    ERROR_SENDED_SMS_FOR_VERIFY_2: 'error_sending_code_for_verify_2',
+    // registration
+    ERROR_VERIFY_PHONE_1: 'error_verify_code_in_your_phone_1',
+    ERROR_VERIFY_PHONE_2: 'error_verify_code_in_your_phone_2',
     // login
-    INVALID_CREDENTIALS: 'invalid_credentials',
+    ERROR_INVALID_CREDENTIALS: 'error_invalid_credentials',
     // common
-    PROVIDE_ALL_DATA: 'provide_all_data'
+    ERROR_PROVIDE_ALL_DATA: 'error_provide_all_data'
 };

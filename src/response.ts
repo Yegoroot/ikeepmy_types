@@ -11,7 +11,7 @@ export interface SuccessResponse<T> {
 
 export interface ErrorResponse<T = string> {
   success: false
-  error: T
+  error: T | 'unknown'
   keyValue?: Record<string, string>
 }
 
@@ -31,22 +31,24 @@ export interface SuccessResponseList<T> {
 // ----------------------------------------------------------
 
 export const RESPONSE_MESSAGES = {
-  // registration & verify-phone
+  // verify-phone (before regisrtation)
   SMS_SENDED_PHONE: 'we_sended_code_in_your_phone',
-  SMS_ERROR_SENDED_PHONE_1: 'error_sending_code_in_your_phone_1',
-  SMS_ERROR_SENDED_PHONE_2: 'error_sending_code_in_your_phone_2',
-  SMS_ERROR_VERIFY_PHONE_1: 'error_verify_code_in_your_phone_1', // ErrorVerifyResponse
-  SMS_ERROR_VERIFY_PHONE_2: 'error_verify_code_in_your_phone_2', // ErrorVerifyResponse
+  ERROR_NUMBER_IS_EXIST: 'error_number_is_exist',
+  ERROR_SENDED_SMS_FOR_VERIFY_1: 'error_sending_code_for_verify_1',
+  ERROR_SENDED_SMS_FOR_VERIFY_2: 'error_sending_code_for_verify_2',
+  // registration
+  ERROR_VERIFY_PHONE_1: 'error_verify_code_in_your_phone_1', // ErrorVerifyResponse
+  ERROR_VERIFY_PHONE_2: 'error_verify_code_in_your_phone_2', // ErrorVerifyResponse
   // login
-  INVALID_CREDENTIALS: 'invalid_credentials',
+  ERROR_INVALID_CREDENTIALS: 'error_invalid_credentials',
   // common
-  PROVIDE_ALL_DATA: 'provide_all_data'
+  ERROR_PROVIDE_ALL_DATA: 'error_provide_all_data'
 } as const
 
 // type MESSAGES = typeof RESPONSE_MESSAGES[keyof typeof RESPONSE_MESSAGES];
 
 // ----------------------------------------------------------
-// Routes
+// RESPONSES
 // ----------------------------------------------------------
 
 // SIGIN | SIGNUP 
@@ -57,20 +59,22 @@ export interface SuccessSignByLoginResponse {
 }
 // LOGIN
 export type ErrorLoginResponse = ErrorResponse<
-  typeof RESPONSE_MESSAGES.INVALID_CREDENTIALS | 
-  'unknown'>
+  typeof RESPONSE_MESSAGES.ERROR_INVALID_CREDENTIALS
+>
 
 // SIGNUP
 export type ErrorSignupResponse = ErrorResponse<
-  typeof RESPONSE_MESSAGES.SMS_ERROR_VERIFY_PHONE_1 | 
-  typeof RESPONSE_MESSAGES.SMS_ERROR_VERIFY_PHONE_2 | 
-  'unknown'>
+  typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | 
+  typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_2
+>
 
 // VERIFY 
 export type SuccessVerifyResponse = SuccessResponse<
-  typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE>
+  typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE
+>
 
 export type ErrorVerifyResponse = ErrorResponse< 
-  typeof RESPONSE_MESSAGES.SMS_ERROR_SENDED_PHONE_1 | 
-  typeof RESPONSE_MESSAGES.SMS_ERROR_SENDED_PHONE_2 | 
-  'unknown'>
+  typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | 
+  typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_2 |
+  typeof RESPONSE_MESSAGES.ERROR_NUMBER_IS_EXIST
+>
