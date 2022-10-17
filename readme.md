@@ -5,5 +5,5 @@
 Install pagage will be
 
 ```sh
-npm i -D ikeepmycommontypes
+npm i -D ikeepmy
 ```
