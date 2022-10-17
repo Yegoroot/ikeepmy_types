@@ -1,6 +1,6 @@
 {
   "name": "ikeepmy",
-  "version": "1.0.51",
+  "version": "1.0.52",
   "description": "Types for admin, api, mobile app ",
   "scripts": {
     "build": "rm -rf dist && node_modules/.bin/tsc && npm run upversion && npm publish",
@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "main": "./dist",
-  "type": "module",
   "devDependencies": {
     "tslib": "^2.4.0",
     "typescript": "^4.8.4"
