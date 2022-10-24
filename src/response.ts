@@ -36,6 +36,8 @@ export const RESPONSE_MESSAGES = {
   ERROR_NUMBER_IS_EXIST: 'error_number_is_exist',
   ERROR_SENDED_SMS_FOR_VERIFY_1: 'error_sending_code_for_verify_1',
   ERROR_VERIFICATION: 'error_verification',
+  ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED: 'error_verification_check_attempts_reached', // Max (5) verification check attempts reached.
+  ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED: 'error_verification_send_attempts_reached', // Max send attempts reachedattempts reached.
   // registration
   ERROR_VERIFY_PHONE_1: 'error_verify_code_in_your_phone_1', // ErrorVerifyResponse
   ERROR_REGISTRATION: 'error_registration', // ErrorVerifyResponse
@@ -64,6 +66,7 @@ export type ErrorLoginResponse = ErrorResponse<
 
 // SIGNUP
 export type ErrorSignupResponse = ErrorResponse<
+  typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | 
   typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | 
   typeof RESPONSE_MESSAGES.ERROR_REGISTRATION
 >
@@ -74,6 +77,7 @@ export type SuccessVerifyResponse = SuccessResponse<
 >
 
 export type ErrorVerifyResponse = ErrorResponse< 
+  typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED |
   typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | 
   typeof RESPONSE_MESSAGES.ERROR_VERIFICATION |
   typeof RESPONSE_MESSAGES.ERROR_NUMBER_IS_EXIST
