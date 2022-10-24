@@ -38,7 +38,7 @@ export const RESPONSE_MESSAGES = {
   ERROR_SENDED_SMS_FOR_VERIFY_2: 'error_sending_code_for_verify_2',
   // registration
   ERROR_VERIFY_PHONE_1: 'error_verify_code_in_your_phone_1', // ErrorVerifyResponse
-  ERROR_VERIFY_PHONE_2: 'error_verify_code_in_your_phone_2', // ErrorVerifyResponse
+  ERROR_REGISTRATION: 'error_verify_code_in_your_phone_2', // ErrorVerifyResponse
   // login
   ERROR_INVALID_CREDENTIALS: 'error_invalid_credentials',
   // common
@@ -65,7 +65,7 @@ export type ErrorLoginResponse = ErrorResponse<
 // SIGNUP
 export type ErrorSignupResponse = ErrorResponse<
   typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | 
-  typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_2
+  typeof RESPONSE_MESSAGES.ERROR_REGISTRATION
 >
 
 // VERIFY 
