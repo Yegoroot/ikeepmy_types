@@ -19,6 +19,8 @@ export declare const RESPONSE_MESSAGES: {
     readonly ERROR_NUMBER_IS_EXIST: "error_number_is_exist";
     readonly ERROR_SENDED_SMS_FOR_VERIFY_1: "error_sending_code_for_verify_1";
     readonly ERROR_VERIFICATION: "error_verification";
+    readonly ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED: "error_verification_check_attempts_reached";
+    readonly ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED: "error_verification_send_attempts_reached";
     readonly ERROR_VERIFY_PHONE_1: "error_verify_code_in_your_phone_1";
     readonly ERROR_REGISTRATION: "error_registration";
     readonly ERROR_INVALID_CREDENTIALS: "error_invalid_credentials";
@@ -30,6 +32,6 @@ export interface SuccessSignByLoginResponse {
     success: true;
 }
 export declare type ErrorLoginResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_INVALID_CREDENTIALS>;
-export declare type ErrorSignupResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | typeof RESPONSE_MESSAGES.ERROR_REGISTRATION>;
+export declare type ErrorSignupResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | typeof RESPONSE_MESSAGES.ERROR_REGISTRATION>;
 export declare type SuccessVerifyResponse = SuccessResponse<typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE>;
-export declare type ErrorVerifyResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | typeof RESPONSE_MESSAGES.ERROR_VERIFICATION | typeof RESPONSE_MESSAGES.ERROR_NUMBER_IS_EXIST>;
+export declare type ErrorVerifyResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | typeof RESPONSE_MESSAGES.ERROR_VERIFICATION | typeof RESPONSE_MESSAGES.ERROR_NUMBER_IS_EXIST>;
