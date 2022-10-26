@@ -1,6 +1,6 @@
 {
   "name": "ikeepmy",
-  "version": "1.0.64",
+  "version": "1.0.65",
   "description": "Types for admin, api, mobile app ",
   "scripts": {
     "build": "rm -rf dist && node_modules/.bin/tsc && npm run upversion && npm publish",

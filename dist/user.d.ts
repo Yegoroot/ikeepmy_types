@@ -29,3 +29,8 @@ export interface SignInLoginBody {
     phone: string;
     password: string;
 }
+export interface RestorePasswordBody {
+    phone: string;
+    password: string;
+    code: string;
+}

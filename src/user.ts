@@ -47,3 +47,15 @@ export interface SignInLoginBody {
   password: string
 }
 
+
+// ----------------------------------------------------------
+// RESTORE PASSWORD
+// ----------------------------------------------------------
+
+export interface RestorePasswordBody {
+  phone: string
+  password: string
+  code: string
+}
+
+
