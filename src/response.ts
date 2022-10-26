@@ -44,7 +44,8 @@ export const RESPONSE_MESSAGES = {
   // login
   ERROR_INVALID_CREDENTIALS: 'error_invalid_credentials',
   // common
-  ERROR_PROVIDE_ALL_DATA: 'error_provide_all_data'
+  ERROR_PROVIDE_ALL_DATA: 'error_provide_all_data',
+  ERROR_NOT_FOUND: 'error_not_found'
 } as const
 
 // type MESSAGES = typeof RESPONSE_MESSAGES[keyof typeof RESPONSE_MESSAGES];
@@ -76,9 +77,16 @@ export type SuccessVerifyResponse = SuccessResponse<
 typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE
 >
 
-export type ErrorVerifyResponse = ErrorResponse< 
+export type ErrorVerifyRegistrationResponse = ErrorResponse< 
 typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | 
   typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | 
   typeof RESPONSE_MESSAGES.ERROR_VERIFICATION |
   typeof RESPONSE_MESSAGES.ERROR_NUMBER_IS_EXIST
+>
+
+export type ErrorVerifyResetPasswordResponse = ErrorResponse< 
+typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | 
+  typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | 
+  typeof RESPONSE_MESSAGES.ERROR_VERIFICATION |
+  typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND
 >
