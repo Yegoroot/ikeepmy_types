@@ -49,10 +49,10 @@ export interface SignInLoginBody {
 
 
 // ----------------------------------------------------------
-// RESTORE PASSWORD
+// Reset PASSWORD
 // ----------------------------------------------------------
 
-export interface RestorePasswordBody {
+export interface UpdatePasswordBody {
   phone: string
   password: string
   code: string

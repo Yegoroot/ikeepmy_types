@@ -29,7 +29,7 @@ export interface SignInLoginBody {
     phone: string;
     password: string;
 }
-export interface RestorePasswordBody {
+export interface UpdatePasswordBody {
     phone: string;
     password: string;
     code: string;
