@@ -26,6 +26,7 @@ export declare const RESPONSE_MESSAGES: {
     readonly ERROR_INVALID_CREDENTIALS: "error_invalid_credentials";
     readonly ERROR_PROVIDE_ALL_DATA: "error_provide_all_data";
     readonly ERROR_NOT_FOUND: "error_not_found";
+    readonly ERROR_UPDATING_PASSWORD: "error_updating_password";
 };
 export interface SuccessSignByLoginResponse {
     user: User;
@@ -34,6 +35,7 @@ export interface SuccessSignByLoginResponse {
 }
 export declare type ErrorLoginResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_INVALID_CREDENTIALS>;
 export declare type ErrorSignupResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | typeof RESPONSE_MESSAGES.ERROR_REGISTRATION>;
+export declare type ErrorUpdatingPasswordResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | typeof RESPONSE_MESSAGES.ERROR_UPDATING_PASSWORD>;
 export declare type SuccessVerifyResponse = SuccessResponse<typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE>;
 export declare type ErrorVerifyRegistrationResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | typeof RESPONSE_MESSAGES.ERROR_VERIFICATION | typeof RESPONSE_MESSAGES.ERROR_NUMBER_IS_EXIST>;
 export declare type ErrorVerifyResetPasswordResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | typeof RESPONSE_MESSAGES.ERROR_VERIFICATION | typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND>;

@@ -19,5 +19,6 @@ exports.RESPONSE_MESSAGES = {
     ERROR_INVALID_CREDENTIALS: 'error_invalid_credentials',
     // common
     ERROR_PROVIDE_ALL_DATA: 'error_provide_all_data',
-    ERROR_NOT_FOUND: 'error_not_found'
+    ERROR_NOT_FOUND: 'error_not_found',
+    ERROR_UPDATING_PASSWORD: 'error_updating_password'
 };
