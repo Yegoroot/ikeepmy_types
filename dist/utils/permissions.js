@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.excludeAdminRoles = exports.isUserHaveAccess = exports.isAuth = exports.isAdmin = exports.isSuperadmin = void 0;
+const user_1 = require("../user");
+const isSuperadmin = (roles) => roles.includes(user_1.Roles.SUPERADMIN);
+exports.isSuperadmin = isSuperadmin;
+const isAdmin = (roles) => roles.includes(user_1.Roles.ADMIN);
+exports.isAdmin = isAdmin;
+const isAuth = (roles) => roles && roles.length;
+exports.isAuth = isAuth;
+const isUserHaveAccess = (accessRoles, userRoles) => accessRoles.some(ar => userRoles.includes(ar));
+exports.isUserHaveAccess = isUserHaveAccess;
+const excludeAdminRoles = (roles) => roles.filter(r => r !== user_1.Roles.SUPERADMIN && r !== user_1.Roles.ADMIN);
+exports.excludeAdminRoles = excludeAdminRoles;

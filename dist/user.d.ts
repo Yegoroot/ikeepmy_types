@@ -3,18 +3,19 @@ export interface User {
     id: string;
     name: string;
     phone: string;
-    role: Roles;
+    roles: Roles[];
     createdAt: Date;
     password: string;
     email?: string;
     creator?: ThisType<User>;
 }
-export interface Roles {
-    SUPERADMIN: 'superadmin';
-    USER: 'user';
-    ADMIN: 'admin';
+export declare enum Roles {
+    SUPERADMIN = "superadmin",
+    USER = "user",
+    ADMIN = "admin",
+    WASHER = "washer",
+    DELEVER = "delever"
 }
-export declare type Role = Roles[keyof Roles];
 export interface VerifyNumberBody {
     phone: string;
 }

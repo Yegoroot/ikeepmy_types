@@ -7,20 +7,22 @@ export interface User {
   id: string
   name: string
   phone: string
-  role: Roles
+  roles: Roles[]
   createdAt: Date
   password: string
   email?: string
   creator?: ThisType<User>
 }
 
-export interface Roles {
-  SUPERADMIN: 'superadmin'
-  USER: 'user'
-  ADMIN: 'admin'
+export enum Roles {
+  SUPERADMIN= 'superadmin',
+  USER= 'user',
+  ADMIN= 'admin',
+  WASHER= 'washer',
+  DELEVER= 'delever'
 }
 
-export type Role = Roles[keyof Roles]
+// export type Role = Roles[keyof Roles]
 
 // ----------------------------------------------------------
 // SIGNUP 
