@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.excludeAdminRoles = exports.isUserHaveAccess = exports.isAuth = exports.isAdmin = exports.isSuperadmin = void 0;
+exports.excludeSystemRoles = exports.excludeAdminRoles = exports.isUserHaveAccess = exports.isAuth = exports.isAdmin = exports.isSuperadmin = void 0;
 const user_1 = require("../user");
 const isSuperadmin = (roles) => roles.includes(user_1.Roles.SUPERADMIN);
 exports.isSuperadmin = isSuperadmin;
@@ -12,3 +12,5 @@ const isUserHaveAccess = (accessRoles, userRoles) => accessRoles.some(ar => user
 exports.isUserHaveAccess = isUserHaveAccess;
 const excludeAdminRoles = (roles) => roles.filter(r => r !== user_1.Roles.SUPERADMIN && r !== user_1.Roles.ADMIN);
 exports.excludeAdminRoles = excludeAdminRoles;
+const excludeSystemRoles = (roles) => roles.filter(r => r !== user_1.Roles.SUPERADMIN && r !== user_1.Roles.ADMIN && r !== user_1.Roles.USER);
+exports.excludeSystemRoles = excludeSystemRoles;
