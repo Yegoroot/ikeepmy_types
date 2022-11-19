@@ -11,7 +11,7 @@ interface UserInfoMap {
     [Roles.DELEVER]: DeleverData;
     [Roles.WASHER]: WasherData;
 }
-interface GenerateUserInfo<T extends UserInfoRoleKeys> {
+export interface GenerateUserInfo<T extends UserInfoRoleKeys> {
     role: T;
     data: UserInfoMap[T];
 }
