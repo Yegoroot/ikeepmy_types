@@ -34,6 +34,9 @@ export type UserInfo = GenerateUserInfo<UserInfoRoleKeys>
 // let a = generateUserInfo(Roles.DELEVER, {isCompany: true, isPowerMan: true});
 export const generateUserInfo = <Key extends UserInfoRoleKeys>(role: Key, data: UserInfoMap[Key]): GenerateUserInfo<Key> => ({ role, data })
 
+// let a = getInfoByRole(Roles.DELEVER, userInfo);
+export const getInfoByRole = <Key extends UserInfoRoleKeys>(role: Key, list: GenerateUserInfo<Key>[]): GenerateUserInfo<Key> | undefined =>  list.find(ui=> ui.role === role)
+
 
 
 // ----------------------------------------------------------

@@ -17,6 +17,7 @@ export interface GenerateUserInfo<T extends UserInfoRoleKeys> {
 }
 export declare type UserInfo = GenerateUserInfo<UserInfoRoleKeys>;
 export declare const generateUserInfo: <Key extends UserInfoRoleKeys>(role: Key, data: UserInfoMap[Key]) => GenerateUserInfo<Key>;
+export declare const getInfoByRole: <Key extends UserInfoRoleKeys>(role: Key, list: GenerateUserInfo<Key>[]) => GenerateUserInfo<Key>;
 export interface User {
     _id: string;
     id: string;
