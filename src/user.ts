@@ -2,16 +2,25 @@
 // USER INFO
 // ----------------------------------------------------------
 
-// FIXME get data from Anas
 interface WasherData {
   isCompany: boolean
   hasACar: boolean
 }
 
-// FIXME get data from Anas
 interface DeleverData {
-  isCompany: boolean
-  isPowerMan: boolean
+  fulleName: string // الاسم الكامل 
+  age: number // العمر
+  gender: string // الجنس
+  city: string // FIXME may be location
+  nationality: string // FIXME ? may be dont need // الجنسية
+  nationalCardID: string // رقم البطاقة الوطنية
+  canWorkAllTime: boolean // هل انت مستعد للعمل في كل  وقت ؟ نعم لا
+  haveTruck: boolean // هل عندك شاحنة نقل السيارات؟ نعم لا
+  truckPlateNumber: string // رقم  لوحة  الشاحنة 
+  // docs
+  photo: string // صورة شخصية
+  nationalCard: string // البطاقه الوطنية 
+  truck?: string // صورة الشاحنة
 }
 
 type UserInfoRoleKeys = Roles.DELEVER | Roles.WASHER
