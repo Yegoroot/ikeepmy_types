@@ -7,8 +7,9 @@ interface WasherData {
   date: string // ملاد
   gender: string // الجنس
   city: string // FIXME may be location
-  nationality: string // FIXME ? enum // الجنسية
-  nationalCardID: string // رقم البطاقة الوطنية
+  nationality: string // الجنسية
+  typeDocument: 'passport' | 'iqama'
+  documentNumber: string
   haveCar: boolean // هل عندك شاحنة نقل السيارات؟ نعم لا
   // docs
   // photoPerson: string // صورة شخصية
@@ -20,8 +21,8 @@ interface DeleverData {
   date: string // ملاد
   gender: string // الجنس
   city: string // FIXME may be location
-  nationality: string // FIXME enum // الجنسية
-  nationalCardID: string // رقم البطاقة الوطنية
+  typeDocument: 'passport' | 'iqama'
+  documentNumber: string
   haveTruck: boolean // هل عندك شاحنة نقل السيارات؟ نعم لا
   truckPlateNumber: string // رقم  لوحة  الشاحنة 
   // docs

@@ -4,7 +4,8 @@ interface WasherData {
     gender: string;
     city: string;
     nationality: string;
-    nationalCardID: string;
+    typeDocument: 'passport' | 'iqama';
+    documentNumber: string;
     haveCar: boolean;
 }
 interface DeleverData {
@@ -12,8 +13,8 @@ interface DeleverData {
     date: string;
     gender: string;
     city: string;
-    nationality: string;
-    nationalCardID: string;
+    typeDocument: 'passport' | 'iqama';
+    documentNumber: string;
     haveTruck: boolean;
     truckPlateNumber: string;
 }
