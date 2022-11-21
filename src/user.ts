@@ -9,11 +9,10 @@ interface WasherData {
   city: string // FIXME may be location
   nationality: string // FIXME ? enum // الجنسية
   nationalCardID: string // رقم البطاقة الوطنية
-  canWorkAllTime: boolean // FIXME may be not need هل انت مستعد للعمل في كل  وقت ؟ نعم لا
   haveCar: boolean // هل عندك شاحنة نقل السيارات؟ نعم لا
   // docs
-  photoPerson: string // صورة شخصية
-  photoNationalCard: string // البطاقه الوطنية 
+  // photoPerson: string // صورة شخصية
+  // photoNationalCard: string // البطاقه الوطنية 
 }
 
 interface DeleverData {
@@ -23,13 +22,12 @@ interface DeleverData {
   city: string // FIXME may be location
   nationality: string // FIXME enum // الجنسية
   nationalCardID: string // رقم البطاقة الوطنية
-  canWorkAllTime: boolean // FIXME may be not need هل انت مستعد للعمل في كل  وقت ؟ نعم لا
   haveTruck: boolean // هل عندك شاحنة نقل السيارات؟ نعم لا
   truckPlateNumber: string // رقم  لوحة  الشاحنة 
   // docs
-  photoPerson: string // صورة شخصية
-  photoNationalCard: string // البطاقه الوطنية 
-  photoTruck?: string // صورة الشاحنة
+  // photoPerson: string // صورة شخصية
+  // photoNationalCard: string // البطاقه الوطنية 
+  // photoTruck?: string // صورة الشاحنة
 }
 
 type UserInfoRoleKeys = Roles.DELEVER | Roles.WASHER

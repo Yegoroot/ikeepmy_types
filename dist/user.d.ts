@@ -5,10 +5,7 @@ interface WasherData {
     city: string;
     nationality: string;
     nationalCardID: string;
-    canWorkAllTime: boolean;
     haveCar: boolean;
-    photoPerson: string;
-    photoNationalCard: string;
 }
 interface DeleverData {
     fulleName: string;
@@ -17,12 +14,8 @@ interface DeleverData {
     city: string;
     nationality: string;
     nationalCardID: string;
-    canWorkAllTime: boolean;
     haveTruck: boolean;
     truckPlateNumber: string;
-    photoPerson: string;
-    photoNationalCard: string;
-    photoTruck?: string;
 }
 declare type UserInfoRoleKeys = Roles.DELEVER | Roles.WASHER;
 interface UserInfoMap {
