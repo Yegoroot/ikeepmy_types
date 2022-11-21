@@ -6,7 +6,7 @@ interface WasherData {
   fulleName: string // الاسم الكامل 
   date: string // ملاد
   gender: string // الجنس
-  city: string // FIXME may be location
+  city: string // 'marrakech' | 'casablanca' | 'tanger' | 'rabat'
   nationality: string // الجنسية
   typeDocument: 'passport' | 'iqama'
   documentNumber: string
@@ -45,7 +45,7 @@ export interface GenerateUserInfo<T extends UserInfoRoleKeys>  {
 }
 
 
-export type UserInfo = GenerateUserInfo<UserInfoRoleKeys>
+export type UserInfo = GenerateUserInfo<Roles.DELEVER> | GenerateUserInfo<Roles.WASHER> 
 
  
 // let a = generateUserInfo(Roles.DELEVER, {isCompany: true, isPowerMan: true});
