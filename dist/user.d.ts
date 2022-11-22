@@ -17,7 +17,7 @@ export interface GenerateRolesInfo<T extends RolesInfoTypes> {
 export declare type RolesInfo = GenerateRolesInfo<Roles.DELEVER> | GenerateRolesInfo<Roles.WASHER>;
 export declare const generateRolesInfo: <Key extends RolesInfoTypes>(role: Key, data: RolesInfoMap[Key]) => GenerateRolesInfo<Key>;
 export declare const getInfoByRole: <Key extends RolesInfoTypes>(role: Key, list: GenerateRolesInfo<Key>[]) => GenerateRolesInfo<Key>;
-interface Doc {
+export interface Doc {
     type: 'passport' | 'iqama';
     number: string;
     photo?: string[];

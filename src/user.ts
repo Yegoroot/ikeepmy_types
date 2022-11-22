@@ -41,7 +41,7 @@ export const getInfoByRole = <Key extends RolesInfoTypes>(role: Key, list: Gener
 // ----------------------------------------------------------
 
 
-interface Doc {
+export interface Doc {
   type: 'passport' | 'iqama'
   number: string
   photo?: string[]
