@@ -3,11 +3,11 @@
 // USER INFO
 // ----------------------------------------------------------
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Roles = exports.getInfoByRole = exports.generateUserInfo = void 0;
-// let a = generateUserInfo(Roles.DELEVER, {isCompany: true, isPowerMan: true});
-const generateUserInfo = (role, data) => ({ role, data });
-exports.generateUserInfo = generateUserInfo;
-// let a = getInfoByRole(Roles.DELEVER, userInfo);
+exports.Roles = exports.getInfoByRole = exports.generateRolesInfo = void 0;
+// let a = generateRolesInfo(Roles.DELEVER, {isCompany: true, isPowerMan: true});
+const generateRolesInfo = (role, data) => ({ role, data });
+exports.generateRolesInfo = generateRolesInfo;
+// let a = getInfoByRole(Roles.DELEVER, rolesInfo);
 const getInfoByRole = (role, list) => list.find(ui => ui.role === role);
 exports.getInfoByRole = getInfoByRole;
 var Roles;

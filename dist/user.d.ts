@@ -1,46 +1,43 @@
 interface WasherData {
-    fulleName: string;
-    date: string;
-    gender: string;
-    city: string;
-    nationality: string;
-    typeDocument: 'passport' | 'iqama';
-    documentNumber: string;
     haveCar: boolean;
 }
 interface DeleverData {
-    fulleName: string;
-    date: string;
-    gender: string;
-    city: string;
-    typeDocument: 'passport' | 'iqama';
-    documentNumber: string;
     haveTruck: boolean;
     truckPlateNumber: string;
 }
-declare type UserInfoRoleKeys = Roles.DELEVER | Roles.WASHER;
-interface UserInfoMap {
+declare type RolesInfoTypes = Roles.DELEVER | Roles.WASHER;
+interface RolesInfoMap {
     [Roles.DELEVER]: DeleverData;
     [Roles.WASHER]: WasherData;
 }
-export interface GenerateUserInfo<T extends UserInfoRoleKeys> {
+export interface GenerateRolesInfo<T extends RolesInfoTypes> {
     role: T;
-    data: UserInfoMap[T];
+    data: RolesInfoMap[T];
 }
-export declare type UserInfo = GenerateUserInfo<Roles.DELEVER> | GenerateUserInfo<Roles.WASHER>;
-export declare const generateUserInfo: <Key extends UserInfoRoleKeys>(role: Key, data: UserInfoMap[Key]) => GenerateUserInfo<Key>;
-export declare const getInfoByRole: <Key extends UserInfoRoleKeys>(role: Key, list: GenerateUserInfo<Key>[]) => GenerateUserInfo<Key>;
+export declare type RolesInfo = GenerateRolesInfo<Roles.DELEVER> | GenerateRolesInfo<Roles.WASHER>;
+export declare const generateRolesInfo: <Key extends RolesInfoTypes>(role: Key, data: RolesInfoMap[Key]) => GenerateRolesInfo<Key>;
+export declare const getInfoByRole: <Key extends RolesInfoTypes>(role: Key, list: GenerateRolesInfo<Key>[]) => GenerateRolesInfo<Key>;
+interface Doc {
+    type: 'passport' | 'iqama';
+    number: string;
+    photo?: string[];
+}
 export interface User {
     _id: string;
     id: string;
     name: string;
     phone: string;
     roles: Roles[];
-    info: UserInfo[];
+    rolesInfo: RolesInfo[];
     createdAt: Date;
     password: string;
     email?: string;
     creator?: ThisType<User>;
+    date?: string;
+    gender?: string;
+    docs?: Doc[];
+    nationality?: string;
+    city?: string;
 }
 export declare enum Roles {
     SUPERADMIN = "superadmin",

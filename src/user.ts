@@ -3,56 +3,36 @@
 // ----------------------------------------------------------
 
 interface WasherData {
-  fulleName: string // الاسم الكامل 
-  date: string // ملاد
-  gender: string // الجنس
-  city: string // 'marrakech' | 'casablanca' | 'tanger' | 'rabat'
-  nationality: string // الجنسية
-  typeDocument: 'passport' | 'iqama'
-  documentNumber: string
   haveCar: boolean // هل عندك شاحنة نقل السيارات؟ نعم لا
-  // docs
-  // photoPerson: string // صورة شخصية
-  // photoNationalCard: string // البطاقه الوطنية 
 }
 
 interface DeleverData {
-  fulleName: string // الاسم الكامل 
-  date: string // ملاد
-  gender: string // الجنس
-  city: string // FIXME may be location
-  typeDocument: 'passport' | 'iqama'
-  documentNumber: string
   haveTruck: boolean // هل عندك شاحنة نقل السيارات؟ نعم لا
   truckPlateNumber: string // رقم  لوحة  الشاحنة 
-  // docs
-  // photoPerson: string // صورة شخصية
-  // photoNationalCard: string // البطاقه الوطنية 
-  // photoTruck?: string // صورة الشاحنة
 }
 
-type UserInfoRoleKeys = Roles.DELEVER | Roles.WASHER
+type RolesInfoTypes = Roles.DELEVER | Roles.WASHER
 
 
-interface UserInfoMap {
+interface RolesInfoMap {
   [Roles.DELEVER]: DeleverData,
   [Roles.WASHER]: WasherData
 }
 
-export interface GenerateUserInfo<T extends UserInfoRoleKeys>  {
+export interface GenerateRolesInfo<T extends RolesInfoTypes>  {
   role: T,
-  data: UserInfoMap[T]
+  data: RolesInfoMap[T]
 }
 
 
-export type UserInfo = GenerateUserInfo<Roles.DELEVER> | GenerateUserInfo<Roles.WASHER> 
+export type RolesInfo = GenerateRolesInfo<Roles.DELEVER> | GenerateRolesInfo<Roles.WASHER> 
 
  
-// let a = generateUserInfo(Roles.DELEVER, {isCompany: true, isPowerMan: true});
-export const generateUserInfo = <Key extends UserInfoRoleKeys>(role: Key, data: UserInfoMap[Key]): GenerateUserInfo<Key> => ({ role, data })
+// let a = generateRolesInfo(Roles.DELEVER, {isCompany: true, isPowerMan: true});
+export const generateRolesInfo = <Key extends RolesInfoTypes>(role: Key, data: RolesInfoMap[Key]): GenerateRolesInfo<Key> => ({ role, data })
 
-// let a = getInfoByRole(Roles.DELEVER, userInfo);
-export const getInfoByRole = <Key extends UserInfoRoleKeys>(role: Key, list: GenerateUserInfo<Key>[]): GenerateUserInfo<Key> | undefined =>  list.find(ui=> ui.role === role)
+// let a = getInfoByRole(Roles.DELEVER, rolesInfo);
+export const getInfoByRole = <Key extends RolesInfoTypes>(role: Key, list: GenerateRolesInfo<Key>[]): GenerateRolesInfo<Key> | undefined =>  list.find(ui=> ui.role === role)
 
 
 
@@ -60,17 +40,29 @@ export const getInfoByRole = <Key extends UserInfoRoleKeys>(role: Key, list: Gen
 // USER AND ROLES
 // ----------------------------------------------------------
 
+
+interface Doc {
+  type: 'passport' | 'iqama'
+  number: string
+  photo?: string[]
+}
+
 export interface User {
   _id: string;
   id: string
   name: string
   phone: string
   roles: Roles[]
-  info: UserInfo[]
+  rolesInfo: RolesInfo[]
   createdAt: Date
   password: string
   email?: string
   creator?: ThisType<User>
+  date?: string // ملاد
+  gender?: string // الجنس
+  docs?: Doc[]
+  nationality?: string // الجنسية
+  city?: string 
 }
 
 export enum Roles {
