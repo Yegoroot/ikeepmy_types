@@ -9,6 +9,12 @@ interface UserData {
   city: string 
 }
 
+interface CompanyData {
+  personCount: number 
+  city: string[]
+  persons?: User[]
+}
+
 interface WasherData {
   haveCar: boolean // هل عندك شاحنة نقل السيارات؟ نعم لا
 }
@@ -18,13 +24,14 @@ interface DeleverData {
   truckPlateNumber: string // رقم  لوحة  الشاحنة 
 }
 
-type RolesInfoTypes = Roles.DELEVER | Roles.WASHER | Roles.USER
-
+type RolesInfoTypes = Roles.DELEVER | Roles.WASHER | Roles.USER | Roles.COMPANY
+ 
 
 interface RolesInfoMap {
-  [Roles.DELEVER]: DeleverData,
+  [Roles.DELEVER]: DeleverData
   [Roles.WASHER]: WasherData
   [Roles.USER]: UserData
+  [Roles.COMPANY]: CompanyData
 }
 
 export interface GenerateRolesInfo<T extends RolesInfoTypes>  {
@@ -33,7 +40,11 @@ export interface GenerateRolesInfo<T extends RolesInfoTypes>  {
 }
 
 
-export type RolesInfo = GenerateRolesInfo<Roles.DELEVER> | GenerateRolesInfo<Roles.WASHER> 
+export type RolesInfo = 
+GenerateRolesInfo<Roles.DELEVER> | 
+GenerateRolesInfo<Roles.WASHER> | 
+GenerateRolesInfo<Roles.USER> | 
+GenerateRolesInfo<Roles.COMPANY>
 
  
 // let a = generateRolesInfo(Roles.DELEVER, {isCompany: true, isPowerMan: true});
@@ -72,6 +83,7 @@ export interface User {
 export enum Roles {
   SUPERADMIN= 'superadmin',
   USER= 'user',
+  COMPANY= 'company',
   ADMIN= 'admin',
   WASHER= 'washer',
   DELEVER= 'delever'

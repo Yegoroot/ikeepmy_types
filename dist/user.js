@@ -14,6 +14,7 @@ var Roles;
 (function (Roles) {
     Roles["SUPERADMIN"] = "superadmin";
     Roles["USER"] = "user";
+    Roles["COMPANY"] = "company";
     Roles["ADMIN"] = "admin";
     Roles["WASHER"] = "washer";
     Roles["DELEVER"] = "delever";
