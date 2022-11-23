@@ -2,6 +2,13 @@
 // USER INFO
 // ----------------------------------------------------------
 
+interface UserData {
+  date: string // ملاد
+  gender: string // الجنس
+  nationality: string // الجنسية
+  city: string 
+}
+
 interface WasherData {
   haveCar: boolean // هل عندك شاحنة نقل السيارات؟ نعم لا
 }
@@ -11,12 +18,13 @@ interface DeleverData {
   truckPlateNumber: string // رقم  لوحة  الشاحنة 
 }
 
-type RolesInfoTypes = Roles.DELEVER | Roles.WASHER
+type RolesInfoTypes = Roles.DELEVER | Roles.WASHER | Roles.USER
 
 
 interface RolesInfoMap {
   [Roles.DELEVER]: DeleverData,
   [Roles.WASHER]: WasherData
+  [Roles.USER]: UserData
 }
 
 export interface GenerateRolesInfo<T extends RolesInfoTypes>  {
@@ -58,11 +66,7 @@ export interface User {
   password: string
   email?: string
   creator?: ThisType<User>
-  date?: string // ملاد
-  gender?: string // الجنس
   docs?: Doc[]
-  nationality?: string // الجنسية
-  city?: string 
 }
 
 export enum Roles {

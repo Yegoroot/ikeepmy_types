@@ -1,3 +1,9 @@
+interface UserData {
+    date: string;
+    gender: string;
+    nationality: string;
+    city: string;
+}
 interface WasherData {
     haveCar: boolean;
 }
@@ -5,10 +11,11 @@ interface DeleverData {
     haveTruck: boolean;
     truckPlateNumber: string;
 }
-declare type RolesInfoTypes = Roles.DELEVER | Roles.WASHER;
+declare type RolesInfoTypes = Roles.DELEVER | Roles.WASHER | Roles.USER;
 interface RolesInfoMap {
     [Roles.DELEVER]: DeleverData;
     [Roles.WASHER]: WasherData;
+    [Roles.USER]: UserData;
 }
 export interface GenerateRolesInfo<T extends RolesInfoTypes> {
     role: T;
@@ -33,11 +40,7 @@ export interface User {
     password: string;
     email?: string;
     creator?: ThisType<User>;
-    date?: string;
-    gender?: string;
     docs?: Doc[];
-    nationality?: string;
-    city?: string;
 }
 export declare enum Roles {
     SUPERADMIN = "superadmin",
