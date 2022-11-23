@@ -1,13 +1,23 @@
-interface UserData {
+interface CommonUserData {
     date: string;
     gender: string;
     nationality: string;
     city: string;
 }
-interface CompanyData {
+interface CommonCompanyData {
     personCount: number;
     city: string[];
     persons?: User[];
+    serviceType: CompanyServices[];
+    secondNumber: string;
+    email: string;
+    additionalInfo: string;
+}
+declare enum CompanyServices {
+    AIR_CONDITIONER_REPAIR = "air_conditioner_repair",
+    CLEANING = "cleaning",
+    CAR_WASHING = "car_washing",
+    CAR_TRANSPORT = "car_transport"
 }
 interface WasherData {
     haveCar: boolean;
@@ -20,8 +30,8 @@ declare type RolesInfoTypes = Roles.DELEVER | Roles.WASHER | Roles.USER | Roles.
 interface RolesInfoMap {
     [Roles.DELEVER]: DeleverData;
     [Roles.WASHER]: WasherData;
-    [Roles.USER]: UserData;
-    [Roles.COMPANY]: CompanyData;
+    [Roles.USER]: CommonUserData;
+    [Roles.COMPANY]: CommonCompanyData;
 }
 export interface GenerateRolesInfo<T extends RolesInfoTypes> {
     role: T;
