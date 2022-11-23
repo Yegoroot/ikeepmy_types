@@ -8,12 +8,12 @@ interface CommonCompanyData {
     personCount: number;
     city: string[];
     persons?: User[];
-    serviceType: CompanyServices[];
+    services: CompanyServices[];
     secondNumber: string;
     email: string;
     additionalInfo: string;
 }
-declare enum CompanyServices {
+export declare enum CompanyServices {
     AIR_CONDITIONER_REPAIR = "air_conditioner_repair",
     CLEANING = "cleaning",
     CAR_WASHING = "car_washing",
