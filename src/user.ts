@@ -6,6 +6,8 @@
 // так же общие документы у всех ролей
 // ----------------------------------------------------------
 
+import { CommonCompanyData } from "./company"
+
 //INFO العامة
 interface CommonUserData {
   date: string // ملاد
@@ -14,24 +16,6 @@ interface CommonUserData {
   city: string 
 }
 
-
-// INFO العامة
-interface CommonCompanyData {
-  personCount: number 
-  city: string[]
-  persons?: User[],
-  services: CompanyServices[],
-  secondNumber: string
-  email: string
-  additionalInfo: string
-}
-
-export enum CompanyServices {
-  AIR_CONDITIONER_REPAIR='air_conditioner_repair',
-  CLEANING="cleaning",
-  CAR_WASHING="car_washing",
-  CAR_TRANSPORT="car_transport"
-}
 
 // INFO الخاصة
 interface WasherData {
