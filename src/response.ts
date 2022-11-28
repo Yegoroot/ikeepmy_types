@@ -50,7 +50,7 @@ export const RESPONSE_MESSAGES = {
   ERROR_UPDATING_PASSWORD: 'error_updating_password',
 
   // TASKS
-  // ERROR_CREATING_TASK: "error_creating_task"
+  ERROR_DONT_HAVE_ROLE: "error_dont_have_role"
 } as const
 
 // type MESSAGES = typeof RESPONSE_MESSAGES[keyof typeof RESPONSE_MESSAGES];

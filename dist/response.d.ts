@@ -27,6 +27,7 @@ export declare const RESPONSE_MESSAGES: {
     readonly ERROR_PROVIDE_ALL_DATA: "error_provide_all_data";
     readonly ERROR_NOT_FOUND: "error_not_found";
     readonly ERROR_UPDATING_PASSWORD: "error_updating_password";
+    readonly ERROR_DONT_HAVE_ROLE: "error_dont_have_role";
 };
 export interface SuccessSignByLoginResponse {
     user: User;

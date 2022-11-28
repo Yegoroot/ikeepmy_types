@@ -22,5 +22,5 @@ exports.RESPONSE_MESSAGES = {
     ERROR_NOT_FOUND: 'error_not_found',
     ERROR_UPDATING_PASSWORD: 'error_updating_password',
     // TASKS
-    // ERROR_CREATING_TASK: "error_creating_task"
+    ERROR_DONT_HAVE_ROLE: "error_dont_have_role"
 };
