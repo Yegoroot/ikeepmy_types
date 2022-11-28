@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TaskStatus = void 0;
 const user_1 = require("./user");
 var TaskStatus;
 (function (TaskStatus) {
@@ -7,4 +8,4 @@ var TaskStatus;
     TaskStatus["ASSIGNED"] = "assigned";
     TaskStatus["IN_WORK"] = "in_work";
     TaskStatus["DONE"] = "done";
-})(TaskStatus || (TaskStatus = {}));
+})(TaskStatus = exports.TaskStatus || (exports.TaskStatus = {}));

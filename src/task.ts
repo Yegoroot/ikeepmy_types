@@ -1,37 +1,43 @@
 import { Coords } from "./common";
 import { Roles, User } from "./user";
 
-enum TaskStatus {
-  NEW="new",
-  ASSIGNED="assigned",
-  IN_WORK="in_work",
-  DONE="done"
-}
-
-interface DeleveryService {
-  datetime: string
-  coords: Coords
-}
-
-interface WashingService {
-  datetime: string
-  coords: Coords
-  countCar: number
-}
 
 interface ServicesMap {
   [Roles.DELEVER]: DeleveryService
   [Roles.WASHER]: WashingService
 }
 
-export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
-  creator: User
-  responsable: User
+type Comment = {user: User, text: string, datetime: string}
+
+
+export enum TaskStatus {
+  NEW="new",
+  ASSIGNED="assigned",
+  IN_WORK="in_work",
+  DONE="done"
+}
+
+export interface DeleveryService {
   datetime: string
+  coords: Coords
+}
+
+export interface WashingService {
+  datetime: string
+  coords: Coords
+  countCar: number
+}
+
+export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
+  user: User // private
+  assigned: User  // private
+  comments: Comment[] // private
   status: TaskStatus,
   roleWorker: T
-  data: ServicesMap[T]
-  comments: {user: User, text: string, datetime: string}[]
+  data: ServicesMap[T] 
+  description: string
+  createdAt: string
+  updatedAt: string
 }
 
 export type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>

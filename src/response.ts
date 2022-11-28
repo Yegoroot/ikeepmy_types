@@ -47,7 +47,10 @@ export const RESPONSE_MESSAGES = {
   ERROR_PROVIDE_ALL_DATA: 'error_provide_all_data',
   ERROR_NOT_FOUND: 'error_not_found',
 
-  ERROR_UPDATING_PASSWORD: 'error_updating_password'
+  ERROR_UPDATING_PASSWORD: 'error_updating_password',
+
+  // TASKS
+  // ERROR_CREATING_TASK: "error_creating_task"
 } as const
 
 // type MESSAGES = typeof RESPONSE_MESSAGES[keyof typeof RESPONSE_MESSAGES];
