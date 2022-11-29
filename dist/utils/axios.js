@@ -21,4 +21,5 @@ exports.instanceAxios = axios_1.default.create({
 exports.instanceAxios.interceptors.request.use((req) => req, errorHandler);
 exports.instanceAxios.interceptors.response.use((res) => res, errorHandler);
 exports.instanceAxios.defaults.baseURL = config_1.API_URL;
+console.log('axios -->', axios_1.default);
 exports.default = exports.instanceAxios;

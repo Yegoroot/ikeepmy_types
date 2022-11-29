@@ -20,3 +20,5 @@ __exportStar(require("./types"), exports);
 __exportStar(require("./utils"), exports);
 // SERVICES
 __exportStar(require("./services"), exports);
+// CONFIG
+__exportStar(require("./config"), exports);

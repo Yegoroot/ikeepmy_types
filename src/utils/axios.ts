@@ -27,4 +27,7 @@ instanceAxios.interceptors.response.use((res) => res, errorHandler)
 
 instanceAxios.defaults.baseURL = API_URL
 
+
+console.log('axios -->', axios);
+
 export default instanceAxios

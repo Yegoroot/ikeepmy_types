@@ -6,7 +6,3 @@ export declare enum ROUTES {
     USERS = "/users",
     COMMING_SOON = "/status/coming-soon"
 }
-export declare enum URLS {
-    TASKS = "/tasks",
-    USERS = "/users"
-}

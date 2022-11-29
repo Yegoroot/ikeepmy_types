@@ -10,7 +10,4 @@ export enum ROUTES {
   COMMING_SOON='/status/coming-soon'
 }
 
-export enum URLS {
-  TASKS='/tasks',
-  USERS='/users'
-}
+
