@@ -18,7 +18,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./types"), exports);
 // UTILS
 __exportStar(require("./utils"), exports);
-// SERVICES
-__exportStar(require("./services"), exports);
 // CONFIG
 __exportStar(require("./config"), exports);

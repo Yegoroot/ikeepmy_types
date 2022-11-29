@@ -13,5 +13,14 @@
     "skipLibCheck": true, /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true, /* Disallow inconsistently */
     "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
+  "exclude": [
+    "tests",
+    "node_modules",
+    "dist"
+  ]
 }
