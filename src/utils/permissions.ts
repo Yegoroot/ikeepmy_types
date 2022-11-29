@@ -1,4 +1,4 @@
-import { Roles } from '../user'
+import { Roles } from '../types'
 
 export const isSuperadmin = (roles: Roles[]) => roles.includes(Roles.SUPERADMIN)
 export const isAdmin = (roles: Roles[]) => roles.includes(Roles.ADMIN)

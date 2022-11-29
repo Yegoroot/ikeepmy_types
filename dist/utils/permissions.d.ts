@@ -1,4 +1,4 @@
-import { Roles } from '../user';
+import { Roles } from '../types';
 export declare const isSuperadmin: (roles: Roles[]) => boolean;
 export declare const isAdmin: (roles: Roles[]) => boolean;
 export declare const isAuth: (roles: Roles[] | undefined) => number;

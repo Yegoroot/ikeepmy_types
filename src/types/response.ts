@@ -46,6 +46,7 @@ export const RESPONSE_MESSAGES = {
   // common
   ERROR_PROVIDE_ALL_DATA: 'error_provide_all_data',
   ERROR_NOT_FOUND: 'error_not_found',
+  UNKNOWN_ERROR: 'unknown_error',
 
   ERROR_UPDATING_PASSWORD: 'error_updating_password',
 

@@ -1,6 +1,9 @@
-export * from './response'
-export * from './user'
-export * from './auth'
-export * from './utils/permissions'
-export * from './common'
-export * from './task'
+// TYPES
+export * from './types'
+
+// UTILS
+export * from './utils'
+
+// SERVICES
+export * from './services'
+
