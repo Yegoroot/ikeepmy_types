@@ -3,3 +3,4 @@ export declare enum URLS {
     TASKS = "/tasks",
     USERS = "/users"
 }
+export declare const defaultLimitDocuments = 35;
