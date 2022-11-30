@@ -25,6 +25,7 @@ export interface WashingService {
     countCar: number;
 }
 export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER> {
+    _id: string;
     user: User;
     assigned: User;
     comments: Comment[];
@@ -36,4 +37,8 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER> {
     updatedAt: string;
 }
 export declare type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>;
+export declare type ErrorResponseGetTasks = {
+    success: false;
+    data: [];
+};
 export {};

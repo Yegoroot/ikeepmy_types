@@ -1,4 +1,5 @@
 import { Coords } from "./common";
+import { ErrorResponse, RESPONSE_MESSAGES } from "./response";
 import { Roles, User } from "./user";
 
 
@@ -29,6 +30,7 @@ export interface WashingService {
 }
 
 export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
+  _id: string
   user: User // private
   assigned: User  // private
   comments: Comment[] // private
@@ -41,3 +43,7 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
 }
 
 export type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>
+
+
+// error response list
+export type ErrorResponseGetTasks = { success: false, data: [] }
