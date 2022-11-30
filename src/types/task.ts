@@ -38,6 +38,7 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
   roleWorker: T
   data: ServicesMap[T] 
   description: string
+  assignedAt: string
   createdAt: string
   updatedAt: string
 }
