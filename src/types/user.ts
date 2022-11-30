@@ -28,7 +28,7 @@ interface DeleverData {
   truckPlateNumber: string // رقم  لوحة  الشاحنة 
 }
 
-type RolesInfoTypes = Roles.DELEVER | Roles.WASHER | Roles.USER | Roles.COMPANY
+type RolesInfoTypes = Roles.DELEVER | Roles.WASHER | Roles.USER | Roles.COMPANY // workerRoles() func in utils
  
 
 interface RolesInfoMap {
