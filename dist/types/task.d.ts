@@ -1,14 +1,5 @@
-import { Coords } from "./common";
-import { Roles, User } from "./user";
-interface ServicesMap {
-    [Roles.DELEVER]: DeleveryService;
-    [Roles.WASHER]: WashingService;
-}
-declare type Comment = {
-    user: User;
-    text: string;
-    datetime: string;
-};
+import { Coords, GetListParams } from "./common";
+import { Roles, User, WorkRoles } from "./user";
 export declare enum TaskStatus {
     NEW = "new",
     ASSIGNED = "assigned",
@@ -24,6 +15,15 @@ export interface WashingService {
     coords: Coords;
     countCar: number;
 }
+interface ServicesMap {
+    [Roles.DELEVER]: DeleveryService;
+    [Roles.WASHER]: WashingService;
+}
+declare type Comment = {
+    user: User;
+    text: string;
+    datetime: string;
+};
 export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER> {
     _id: string;
     user: User;
@@ -38,6 +38,12 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER> {
     updatedAt: string;
 }
 export declare type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>;
+export interface GetTasksParams extends GetListParams {
+    status?: TaskStatus;
+    roleWorker?: WorkRoles;
+    user?: string;
+    assigned?: string;
+}
 export declare type ErrorResponseGetTasks = {
     success: false;
     data: [];

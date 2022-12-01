@@ -1,15 +1,11 @@
-import { Coords } from "./common";
-import { ErrorResponse, RESPONSE_MESSAGES } from "./response";
-import { Roles, User } from "./user";
+import { Coords, GetListParams } from "./common";
+import { Roles, User, WorkRoles } from "./user";
 
 
-interface ServicesMap {
-  [Roles.DELEVER]: DeleveryService
-  [Roles.WASHER]: WashingService
-}
+// ---------------------------------------------------
+// ---------------------------------------------------
 
-type Comment = {user: User, text: string, datetime: string}
-
+// STATUS
 
 export enum TaskStatus {
   NEW="new",
@@ -17,6 +13,11 @@ export enum TaskStatus {
   IN_WORK="in_work",
   DONE="done"
 }
+
+// ---------------------------------------------------
+// ---------------------------------------------------
+
+// SERVICES
 
 export interface DeleveryService {
   datetime: string
@@ -28,6 +29,19 @@ export interface WashingService {
   coords: Coords
   countCar: number
 }
+
+
+interface ServicesMap {
+  [Roles.DELEVER]: DeleveryService
+  [Roles.WASHER]: WashingService
+}
+
+// ---------------------------------------------------
+// ---------------------------------------------------
+
+// TASK
+
+type Comment = {user: User, text: string, datetime: string}
 
 export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
   _id: string
@@ -46,5 +60,22 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
 export type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>
 
 
-// error response list
+// ---------------------------------------------------
+// ---------------------------------------------------
+
+// PARAMS
+
+export interface GetTasksParams extends GetListParams {
+  status?: TaskStatus
+  roleWorker?: WorkRoles
+  user?: string // who create
+  assigned?: string
+}
+
+
+// ---------------------------------------------------
+// ---------------------------------------------------
+
+// RESPONCES
+
 export type ErrorResponseGetTasks = { success: false, data: [] }

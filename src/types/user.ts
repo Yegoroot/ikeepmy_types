@@ -28,7 +28,7 @@ interface DeleverData {
   truckPlateNumber: string // رقم  لوحة  الشاحنة 
 }
 
-type RolesInfoTypes = Roles.DELEVER | Roles.WASHER | Roles.USER | Roles.COMPANY // workerRoles() func in utils
+export type WorkRoles = Roles.DELEVER | Roles.WASHER | Roles.USER | Roles.COMPANY // workerRoles() func in utils
  
 
 interface RolesInfoMap {
@@ -38,7 +38,7 @@ interface RolesInfoMap {
   [Roles.COMPANY]: CommonCompanyData
 }
 
-export interface GenerateRolesInfo<T extends RolesInfoTypes>  {
+export interface GenerateRolesInfo<T extends WorkRoles>  {
   role: T,
   data: RolesInfoMap[T]
 }
@@ -52,10 +52,10 @@ GenerateRolesInfo<Roles.COMPANY>
 
  
 // let a = generateRolesInfo(Roles.DELEVER, {isCompany: true, isPowerMan: true});
-export const generateRolesInfo = <Key extends RolesInfoTypes>(role: Key, data: RolesInfoMap[Key]): GenerateRolesInfo<Key> => ({ role, data })
+export const generateRolesInfo = <Key extends WorkRoles>(role: Key, data: RolesInfoMap[Key]): GenerateRolesInfo<Key> => ({ role, data })
 
 // let a = getInfoByRole(Roles.DELEVER, rolesInfo);
-export const getInfoByRole = <Key extends RolesInfoTypes>(role: Key, list: GenerateRolesInfo<Key>[]): GenerateRolesInfo<Key> | undefined =>  list.find(ui=> ui.role === role)
+export const getInfoByRole = <Key extends WorkRoles>(role: Key, list: GenerateRolesInfo<Key>[]): GenerateRolesInfo<Key> | undefined =>  list.find(ui=> ui.role === role)
 
 
 
