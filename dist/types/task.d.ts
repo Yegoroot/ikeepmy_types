@@ -1,4 +1,5 @@
 import { Coords, GetListParams } from "./common";
+import { ErrorResponse, RESPONSE_MESSAGES } from "./response";
 import { Roles, User, WorkRoles } from "./user";
 export declare enum TaskStatus {
     NEW = "new",
@@ -48,4 +49,5 @@ export declare type ErrorResponseGetTasks = {
     success: false;
     data: [];
 };
+export declare type ErrorResponseCreateTask = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_PROVIDE_ALL_DATA>;
 export {};
