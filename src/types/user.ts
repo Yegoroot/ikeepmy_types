@@ -84,7 +84,7 @@ export interface User {
   docs?: Doc[]
 }
 
-export enum Roles {
+export const enum Roles {
   SUPERADMIN= 'superadmin',
   USER= 'user',
   COMPANY= 'company',

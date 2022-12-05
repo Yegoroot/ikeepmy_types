@@ -44,7 +44,7 @@ export interface User {
     creator?: ThisType<User>;
     docs?: Doc[];
 }
-export declare enum Roles {
+export declare const enum Roles {
     SUPERADMIN = "superadmin",
     USER = "user",
     COMPANY = "company",
