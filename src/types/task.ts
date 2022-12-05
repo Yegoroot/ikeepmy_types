@@ -1,4 +1,5 @@
 import { Coords, GetListParams } from "./common";
+import { ErrorResponse, RESPONSE_MESSAGES } from "./response";
 import { Roles, User, WorkRoles } from "./user";
 
 
@@ -78,4 +79,10 @@ export interface GetTasksParams extends GetListParams {
 
 // RESPONCES
 
+// list task
 export type ErrorResponseGetTasks = { success: false, data: [] }
+
+// task create
+export type ErrorResponseCreateTask = ErrorResponse< 
+  typeof RESPONSE_MESSAGES.ERROR_PROVIDE_ALL_DATA 
+>
