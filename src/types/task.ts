@@ -86,3 +86,8 @@ export type ErrorResponseGetTasks = { success: false, data: [] }
 export type ErrorResponseCreateTask = ErrorResponse< 
   typeof RESPONSE_MESSAGES.ERROR_PROVIDE_ALL_DATA 
 >
+
+export type ErrorResponseGetTask = ErrorResponse< 
+  typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND |  
+  typeof RESPONSE_MESSAGES.ERROR_NOT_AUTH  
+>

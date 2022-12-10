@@ -50,4 +50,5 @@ export declare type ErrorResponseGetTasks = {
     data: [];
 };
 export declare type ErrorResponseCreateTask = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_PROVIDE_ALL_DATA>;
+export declare type ErrorResponseGetTask = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND | typeof RESPONSE_MESSAGES.ERROR_NOT_AUTH>;
 export {};
