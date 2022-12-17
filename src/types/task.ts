@@ -91,3 +91,8 @@ export type ErrorResponseGetTask = ErrorResponse<
   typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND |  
   typeof RESPONSE_MESSAGES.ERROR_NOT_AUTH  
 >
+
+export type ErrorResponseAssignTask = ErrorResponse< 
+  typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND |  
+  typeof RESPONSE_MESSAGES.ERROR_DONT_HAVE_ROLE  
+>
