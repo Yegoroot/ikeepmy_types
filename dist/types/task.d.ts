@@ -34,9 +34,9 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER> {
     roleWorker: T;
     data: ServicesMap[T];
     description: string;
-    assignedAt: string;
-    createdAt: string;
-    updatedAt: string;
+    assignedAt: Date;
+    createdAt: Date;
+    updatedAt: Date;
 }
 export declare type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>;
 export interface GetTasksParams extends GetListParams {
