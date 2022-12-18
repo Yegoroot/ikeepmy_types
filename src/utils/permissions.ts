@@ -25,7 +25,7 @@ export const isWorkerRoles = (roles: Roles[]) => roles.some(r=>
 export const isCustomer = (roles: Roles[]) => {
   const isNotWorker = !isWorkerRoles(roles)
   const isNotSuperadmin = !isSuperadmin(roles)
-  const isNotAdmin = isAdmin(roles)
+  const isNotAdmin = !isAdmin(roles)
 
   return isNotWorker && isNotSuperadmin && isNotAdmin
 }

@@ -22,7 +22,7 @@ exports.isWorkerRoles = isWorkerRoles;
 const isCustomer = (roles) => {
     const isNotWorker = !(0, exports.isWorkerRoles)(roles);
     const isNotSuperadmin = !(0, exports.isSuperadmin)(roles);
-    const isNotAdmin = (0, exports.isAdmin)(roles);
+    const isNotAdmin = !(0, exports.isAdmin)(roles);
     return isNotWorker && isNotSuperadmin && isNotAdmin;
 };
 exports.isCustomer = isCustomer;
