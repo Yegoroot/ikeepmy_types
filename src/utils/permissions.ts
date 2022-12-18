@@ -20,3 +20,12 @@ export const excludeSystemRoles = (roles: Roles[]) => roles.filter(r=>
 
 export const isWorkerRoles = (roles: Roles[]) => roles.some(r=> 
   [Roles.COMPANY, Roles.DELEVER, Roles.WASHER].includes(r))
+
+// roles [company] or [user]
+export const isCustomer = (roles: Roles[]) => {
+  const isNotWorker = !isWorkerRoles(roles)
+  const isNotSuperadmin = !isSuperadmin(roles)
+  const isNotAdmin = isAdmin(roles)
+
+  return isNotWorker && isNotSuperadmin && isNotAdmin
+}

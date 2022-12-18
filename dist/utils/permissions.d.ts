@@ -6,3 +6,4 @@ export declare const isUserHaveAccess: (accessRoles: Roles[], userRoles: Roles[]
 export declare const excludeAdminRoles: (roles: Roles[]) => Roles[];
 export declare const excludeSystemRoles: (roles: Roles[]) => Roles[];
 export declare const isWorkerRoles: (roles: Roles[]) => boolean;
+export declare const isCustomer: (roles: Roles[]) => boolean;
