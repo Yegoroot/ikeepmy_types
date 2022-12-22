@@ -9,5 +9,6 @@ var TaskStatus;
     TaskStatus["NEW"] = "new";
     TaskStatus["ASSIGNED"] = "assigned";
     TaskStatus["IN_WORK"] = "in_work";
+    TaskStatus["CANCELED"] = "canceled";
     TaskStatus["DONE"] = "done";
 })(TaskStatus = exports.TaskStatus || (exports.TaskStatus = {}));

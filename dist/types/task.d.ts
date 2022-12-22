@@ -1,10 +1,11 @@
 import { Coords, GetListParams } from "./common";
 import { ErrorResponse, RESPONSE_MESSAGES } from "./response";
 import { Roles, User, WorkRoles } from "./user";
-export declare enum TaskStatus {
+export declare const enum TaskStatus {
     NEW = "new",
     ASSIGNED = "assigned",
     IN_WORK = "in_work",
+    CANCELED = "canceled",
     DONE = "done"
 }
 export interface DeleveryService {

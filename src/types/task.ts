@@ -8,10 +8,11 @@ import { Roles, User, WorkRoles } from "./user";
 
 // STATUS
 
-export enum TaskStatus {
+export const enum TaskStatus {
   NEW="new",
   ASSIGNED="assigned",
   IN_WORK="in_work",
+  CANCELED="canceled",
   DONE="done"
 }
 
