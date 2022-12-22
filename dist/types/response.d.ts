@@ -30,6 +30,7 @@ export declare const RESPONSE_MESSAGES: {
     readonly UNKNOWN_ERROR: "unknown_error";
     readonly ERROR_UPDATING_PASSWORD: "error_updating_password";
     readonly ERROR_DONT_HAVE_ROLE: "error_dont_have_role";
+    readonly ERROR_DONT_HAVE_PERMISSIONS: "error_dont_have_permissions";
 };
 export interface SuccessSignByLoginResponse {
     user: User;

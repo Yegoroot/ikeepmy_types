@@ -24,5 +24,6 @@ exports.RESPONSE_MESSAGES = {
     UNKNOWN_ERROR: 'unknown_error',
     ERROR_UPDATING_PASSWORD: 'error_updating_password',
     // TASKS
-    ERROR_DONT_HAVE_ROLE: "error_dont_have_role"
+    ERROR_DONT_HAVE_ROLE: "error_dont_have_role",
+    ERROR_DONT_HAVE_PERMISSIONS: "error_dont_have_permissions"
 };
