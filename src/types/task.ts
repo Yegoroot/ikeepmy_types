@@ -43,7 +43,7 @@ interface ServicesMap {
 
 // TASK
 
-type TaskLog = {
+type TaskHistory = {
   user: User, 
   action: TaskStatus.ASSIGNED | TaskStatus.CANCELED | TaskStatus.DONE | 'update', 
   datetime: string, 
@@ -64,7 +64,7 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
   roleWorker: T
   data: ServicesMap[T] 
   description: string
-  logs: TaskLog[]
+  history: TaskHistory[]
   assignedAt: Date
   createdAt: Date
   updatedAt: Date
