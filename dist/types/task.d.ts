@@ -22,7 +22,7 @@ interface ServicesMap {
 }
 declare type TaskHistory = {
     user: User;
-    action: TaskStatus.ASSIGNED | TaskStatus.CANCELED | TaskStatus.DONE | 'update';
+    action: TaskStatus.ASSIGNED | TaskStatus.CANCELED | TaskStatus.DONE | 'update' | 'create';
     datetime: string;
     data: Record<string, unknown>;
 };
