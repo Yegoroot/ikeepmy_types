@@ -11,7 +11,7 @@ import { Roles, User, WorkRoles } from "./user";
 export const enum TaskStatus {
   NEW="new",
   ASSIGNED="assigned",
-  IN_WORK="in_work",
+  // IN_WORK="in_work",
   CANCELED="canceled",
   DONE="done"
 }
@@ -43,7 +43,17 @@ interface ServicesMap {
 
 // TASK
 
-type Comment = {user: User, text: string, datetime: string}
+type TaskLog = {
+  user: User, 
+  action: TaskStatus.ASSIGNED | TaskStatus.CANCELED | TaskStatus.DONE | 'update', 
+  datetime: string, 
+  data: Record<string, unknown>
+}
+type Comment = {
+  user: User, 
+  text: string, 
+  datetime: string
+}
 
 export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
   _id: string
@@ -54,6 +64,7 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
   roleWorker: T
   data: ServicesMap[T] 
   description: string
+  logs: TaskLog[]
   assignedAt: Date
   createdAt: Date
   updatedAt: Date
