@@ -113,3 +113,8 @@ export type ErrorResponseCancelTask = ErrorResponse<
   typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND |  
   typeof RESPONSE_MESSAGES.ERROR_DONT_HAVE_PERMISSIONS  
 >
+
+export type ErrorResponseDoneTask = ErrorResponse< 
+  typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND |  
+  typeof RESPONSE_MESSAGES.ERROR_DONT_HAVE_PERMISSIONS  
+>
