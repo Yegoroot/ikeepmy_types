@@ -26,5 +26,6 @@ exports.RESPONSE_MESSAGES = {
     // TASKS
     ERROR_DONT_HAVE_ROLE: "error_dont_have_role",
     ERROR_DONT_HAVE_PERMISSIONS: "error_dont_have_permissions",
-    ERROR_CANNOT_BE_TAKEN_MORE_THAN_5: "error_cannot_be_taken_more_than_5"
+    ERROR_CANNOT_BE_TAKEN_MORE_THAN_5: "error_cannot_be_taken_more_than_5",
+    ERROR_DIFFERENCE_BETWEEN_TASKS_80: "error_difference_between_tasks_80_minutes",
 };

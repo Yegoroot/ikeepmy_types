@@ -107,7 +107,9 @@ export type ErrorResponseGetTask = ErrorResponse<
 
 export type ErrorResponseAssignTask = ErrorResponse< 
   typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND |  
-  typeof RESPONSE_MESSAGES.ERROR_DONT_HAVE_ROLE  
+  typeof RESPONSE_MESSAGES.ERROR_DONT_HAVE_ROLE | 
+  typeof RESPONSE_MESSAGES.ERROR_CANNOT_BE_TAKEN_MORE_THAN_5 | 
+  typeof RESPONSE_MESSAGES.ERROR_DIFFERENCE_BETWEEN_TASKS_80  
 >
 
 export type ErrorResponseCancelTask = ErrorResponse< 

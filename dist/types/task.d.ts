@@ -59,7 +59,7 @@ export declare type ErrorResponseGetTasks = {
 };
 export declare type ErrorResponseCreateTask = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_PROVIDE_ALL_DATA>;
 export declare type ErrorResponseGetTask = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND | typeof RESPONSE_MESSAGES.ERROR_NOT_AUTH>;
-export declare type ErrorResponseAssignTask = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND | typeof RESPONSE_MESSAGES.ERROR_DONT_HAVE_ROLE>;
+export declare type ErrorResponseAssignTask = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND | typeof RESPONSE_MESSAGES.ERROR_DONT_HAVE_ROLE | typeof RESPONSE_MESSAGES.ERROR_CANNOT_BE_TAKEN_MORE_THAN_5 | typeof RESPONSE_MESSAGES.ERROR_DIFFERENCE_BETWEEN_TASKS_80>;
 export declare type ErrorResponseCancelTask = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND | typeof RESPONSE_MESSAGES.ERROR_DONT_HAVE_PERMISSIONS>;
 export declare type ErrorResponseDoneTask = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND | typeof RESPONSE_MESSAGES.ERROR_DONT_HAVE_PERMISSIONS>;
 export {};
