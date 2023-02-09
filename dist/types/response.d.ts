@@ -31,6 +31,7 @@ export declare const RESPONSE_MESSAGES: {
     readonly ERROR_UPDATING_PASSWORD: "error_updating_password";
     readonly ERROR_DONT_HAVE_ROLE: "error_dont_have_role";
     readonly ERROR_DONT_HAVE_PERMISSIONS: "error_dont_have_permissions";
+    readonly ERROR_CANNOT_BE_TAKEN_MORE_THAN_5: "error_cannot_be_taken_more_than_5";
 };
 export interface SuccessSignByLoginResponse {
     user: User;

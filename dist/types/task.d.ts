@@ -22,7 +22,7 @@ interface ServicesMap {
 }
 declare type TaskHistory = {
     user: User;
-    action: TaskStatus.ASSIGNED | TaskStatus.CANCELED | TaskStatus.DONE | 'update' | 'create';
+    action: TaskStatus.ASSIGNED | TaskStatus.CANCELED | TaskStatus.DONE | 'updated' | 'created';
     datetime: string;
     data: Record<string, unknown>;
 };
@@ -41,9 +41,10 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER> {
     data: ServicesMap[T];
     description: string;
     history: TaskHistory[];
-    assignedAt: Date;
-    createdAt: Date;
-    updatedAt: Date;
+    assignedAt: String;
+    createdAt: String;
+    updatedAt: String;
+    canceledAt: String;
 }
 export declare type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>;
 export interface GetTasksParams extends GetListParams {
