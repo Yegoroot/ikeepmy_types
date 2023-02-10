@@ -36,6 +36,7 @@ export interface User {
     id: string;
     name: string;
     phone: string;
+    pushTokens: string[];
     roles: Roles[];
     rolesInfo: RolesInfo[];
     createdAt: Date;
