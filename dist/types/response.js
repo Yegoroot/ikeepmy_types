@@ -1,4 +1,7 @@
 "use strict";
+// ----------------------------------------------------------
+// BASE RESPONSE
+// ----------------------------------------------------------
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RESPONSE_MESSAGES = void 0;
 // ----------------------------------------------------------
@@ -29,3 +32,4 @@ exports.RESPONSE_MESSAGES = {
     ERROR_CANNOT_BE_TAKEN_MORE_THAN_5: "error_cannot_be_taken_more_than_5",
     ERROR_DIFFERENCE_BETWEEN_TASKS_80: "error_difference_between_tasks_80_minutes",
 };
+// type MESSAGES = typeof RESPONSE_MESSAGES[keyof typeof RESPONSE_MESSAGES];

@@ -18,5 +18,6 @@ __exportStar(require("./auth"), exports);
 __exportStar(require("./common"), exports);
 __exportStar(require("./company"), exports);
 __exportStar(require("./response"), exports);
+__exportStar(require("./services"), exports);
 __exportStar(require("./task"), exports);
 __exportStar(require("./user"), exports);

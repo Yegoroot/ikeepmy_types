@@ -1,16 +1,11 @@
 import { CommonCompanyData } from "./company";
+import { ErrorResponse, RESPONSE_MESSAGES, SuccessResponse } from "./response";
+import { WasherData, DeleverData } from "./services";
 interface CommonUserData {
     date: string;
     gender: string;
     nationality: string;
     city: string;
-}
-interface WasherData {
-    haveCar: boolean;
-}
-interface DeleverData {
-    haveTruck: boolean;
-    truckPlateNumber: string;
 }
 export declare type WorkRoles = Roles.DELEVER | Roles.WASHER | Roles.USER | Roles.COMPANY;
 interface RolesInfoMap {
@@ -53,4 +48,17 @@ export declare const enum Roles {
     WASHER = "washer",
     DELEVER = "delever"
 }
+export interface SuccessSignByLoginResponse {
+    user: User;
+    token: string;
+    success: true;
+}
+export declare type ErrorLoginResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_INVALID_CREDENTIALS>;
+export declare type ErrorSignupResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | typeof RESPONSE_MESSAGES.ERROR_REGISTRATION>;
+export declare type ErrorUpdatingPasswordResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | typeof RESPONSE_MESSAGES.ERROR_UPDATING_PASSWORD>;
+export declare type SuccessVerifyResponse = SuccessResponse<typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE>;
+export declare type ErrorVerifyRegistrationResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | typeof RESPONSE_MESSAGES.ERROR_VERIFICATION | typeof RESPONSE_MESSAGES.ERROR_NUMBER_IS_EXIST>;
+export declare type ErrorVerifyResetPasswordResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | typeof RESPONSE_MESSAGES.ERROR_VERIFICATION | typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND>;
+export declare type ErrorPushNotificationTokenResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_INVALID_CREDENTIALS | typeof RESPONSE_MESSAGES.ERROR_NOT_AUTH>;
+export declare type SuccessPushNotificationTokenResponse = SuccessResponse<User>;
 export {};
