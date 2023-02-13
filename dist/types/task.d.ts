@@ -50,6 +50,7 @@ export declare type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASH
 export interface GetTasksParams extends GetListParams {
     status?: TaskStatus;
     roleWorker?: WorkRoles;
+    user?: string;
     assigned?: string;
 }
 export declare type ErrorResponseGetTasks = {

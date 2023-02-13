@@ -82,6 +82,7 @@ export type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>
 export interface GetTasksParams extends GetListParams {
   status?: TaskStatus
   roleWorker?: WorkRoles
+  user?: string // who create
   assigned?: string
 }
 
