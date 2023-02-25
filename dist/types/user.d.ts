@@ -1,16 +1,17 @@
 import { CommonCompanyData } from "./company";
-import { ErrorResponse, RESPONSE_MESSAGES, SuccessResponse } from "./response";
-import { WasherData, DeleverData } from "./services";
+import { WasherCarUserData, DeleverUserData } from "./services";
 interface CommonUserData {
     date: string;
     gender: string;
     nationality: string;
     city: string;
 }
-export declare type WorkRoles = Roles.DELEVER | Roles.WASHER | Roles.USER | Roles.COMPANY;
+export declare type WorkRoles = Roles.DELEVER | Roles.WASHER_CAR | Roles.WASHER_BUILD_PACKAGE | Roles.WASHER_BUILD_STANDART | Roles.USER | Roles.COMPANY;
 interface RolesInfoMap {
-    [Roles.DELEVER]: DeleverData;
-    [Roles.WASHER]: WasherData;
+    [Roles.DELEVER]: WasherCarUserData;
+    [Roles.WASHER_CAR]: DeleverUserData;
+    [Roles.WASHER_BUILD_PACKAGE]: {};
+    [Roles.WASHER_BUILD_STANDART]: {};
     [Roles.USER]: CommonUserData;
     [Roles.COMPANY]: CommonCompanyData;
 }
@@ -18,7 +19,7 @@ export interface GenerateRolesInfo<T extends WorkRoles> {
     role: T;
     data: RolesInfoMap[T];
 }
-export declare type RolesInfo = GenerateRolesInfo<Roles.DELEVER> | GenerateRolesInfo<Roles.WASHER> | GenerateRolesInfo<Roles.USER> | GenerateRolesInfo<Roles.COMPANY>;
+export declare type RolesInfo = GenerateRolesInfo<Roles.DELEVER> | GenerateRolesInfo<Roles.WASHER_CAR> | GenerateRolesInfo<Roles.WASHER_BUILD_PACKAGE> | GenerateRolesInfo<Roles.WASHER_BUILD_STANDART> | GenerateRolesInfo<Roles.USER> | GenerateRolesInfo<Roles.COMPANY>;
 export declare const generateRolesInfo: <Key extends WorkRoles>(role: Key, data: RolesInfoMap[Key]) => GenerateRolesInfo<Key>;
 export declare const getInfoByRole: <Key extends WorkRoles>(role: Key, list: GenerateRolesInfo<Key>[]) => GenerateRolesInfo<Key>;
 export interface Doc {
@@ -45,20 +46,9 @@ export declare const enum Roles {
     USER = "user",
     COMPANY = "company",
     ADMIN = "admin",
-    WASHER = "washer",
+    WASHER_CAR = "washer_car",
+    WASHER_BUILD_STANDART = "washer_build_standart",
+    WASHER_BUILD_PACKAGE = "washer_build_package",
     DELEVER = "delever"
 }
-export interface SuccessSignByLoginResponse {
-    user: User;
-    token: string;
-    success: true;
-}
-export declare type ErrorLoginResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_INVALID_CREDENTIALS>;
-export declare type ErrorSignupResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | typeof RESPONSE_MESSAGES.ERROR_REGISTRATION>;
-export declare type ErrorUpdatingPasswordResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_CHECK_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_VERIFY_PHONE_1 | typeof RESPONSE_MESSAGES.ERROR_UPDATING_PASSWORD>;
-export declare type SuccessVerifyResponse = SuccessResponse<typeof RESPONSE_MESSAGES.SMS_SENDED_PHONE>;
-export declare type ErrorVerifyRegistrationResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | typeof RESPONSE_MESSAGES.ERROR_VERIFICATION | typeof RESPONSE_MESSAGES.ERROR_NUMBER_IS_EXIST>;
-export declare type ErrorVerifyResetPasswordResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_VERIFICATION_SEND_ATTEMPTS_REACHED | typeof RESPONSE_MESSAGES.ERROR_SENDED_SMS_FOR_VERIFY_1 | typeof RESPONSE_MESSAGES.ERROR_VERIFICATION | typeof RESPONSE_MESSAGES.ERROR_NOT_FOUND>;
-export declare type ErrorPushNotificationTokenResponse = ErrorResponse<typeof RESPONSE_MESSAGES.ERROR_INVALID_CREDENTIALS | typeof RESPONSE_MESSAGES.ERROR_NOT_AUTH>;
-export declare type SuccessPushNotificationTokenResponse = SuccessResponse<User>;
 export {};

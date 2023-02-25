@@ -1,4 +1,4 @@
-import { Roles } from '../types'
+import { Roles, workerRoles } from '../types'
 
 export const isSuperadmin = (roles: Roles[]) => roles.includes(Roles.SUPERADMIN)
 
@@ -19,7 +19,7 @@ export const excludeSystemRoles = (roles: Roles[]) => roles.filter(r=>
   r !== Roles.USER)
 
 export const isWorkerRoles = (roles: Roles[]) => roles.some(r=> 
-  [Roles.COMPANY, Roles.DELEVER, Roles.WASHER].includes(r))
+  workerRoles.includes(r))
 
 // roles [company] or [user]
 export const isCustomer = (roles: Roles[]) => {

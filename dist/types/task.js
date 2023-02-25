@@ -8,7 +8,6 @@ var TaskStatus;
 (function (TaskStatus) {
     TaskStatus["NEW"] = "new";
     TaskStatus["ASSIGNED"] = "assigned";
-    // IN_WORK="in_work",
     TaskStatus["CANCELED"] = "canceled";
     TaskStatus["DONE"] = "done";
 })(TaskStatus = exports.TaskStatus || (exports.TaskStatus = {}));

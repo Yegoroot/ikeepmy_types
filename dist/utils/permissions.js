@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isCustomer = exports.isWorkerRoles = exports.excludeSystemRoles = exports.excludeAdminRoles = exports.isUserHaveAccess = exports.isAuth = exports.isAdmin = exports.isSuperadmin = void 0;
+const types_1 = require("../types");
 const isSuperadmin = (roles) => roles.includes("superadmin" /* Roles.SUPERADMIN */);
 exports.isSuperadmin = isSuperadmin;
 const isAdmin = (roles) => roles.includes("admin" /* Roles.ADMIN */);
@@ -16,7 +17,7 @@ const excludeSystemRoles = (roles) => roles.filter(r => r !== "superadmin" /* Ro
     r !== "admin" /* Roles.ADMIN */ &&
     r !== "user" /* Roles.USER */);
 exports.excludeSystemRoles = excludeSystemRoles;
-const isWorkerRoles = (roles) => roles.some(r => ["company" /* Roles.COMPANY */, "delever" /* Roles.DELEVER */, "washer" /* Roles.WASHER */].includes(r));
+const isWorkerRoles = (roles) => roles.some(r => types_1.workerRoles.includes(r));
 exports.isWorkerRoles = isWorkerRoles;
 // roles [company] or [user]
 const isCustomer = (roles) => {

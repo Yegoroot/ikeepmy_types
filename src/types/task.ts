@@ -1,6 +1,7 @@
-import { Coords, GetListParams } from "./common";
+import { GetListParams } from "./common";
 import { ErrorResponse, RESPONSE_MESSAGES } from "./response";
-import { Roles, User, WorkRoles } from "./user";
+import { ServicesMap, ServiceWorkRoles } from "./services";
+import { User, WorkRoles } from "./user";
 
 
 // ---------------------------------------------------
@@ -11,35 +12,9 @@ import { Roles, User, WorkRoles } from "./user";
 export const enum TaskStatus {
   NEW="new",
   ASSIGNED="assigned",
-  // IN_WORK="in_work",
   CANCELED="canceled",
   DONE="done"
 }
-
-// ---------------------------------------------------
-// ---------------------------------------------------
-
-// SERVICES
-
-export interface DeleveryService {
-  datetime: string
-  coords: Coords
-}
-
-export interface WashingService {
-  datetime: string
-  coords: Coords
-  countCar: number
-}
-
-
-interface ServicesMap {
-  [Roles.DELEVER]: DeleveryService
-  [Roles.WASHER]: WashingService
-}
-
-// ---------------------------------------------------
-// ---------------------------------------------------
 
 // TASK
 
@@ -55,7 +30,8 @@ type Comment = {
   datetime: string
 }
 
-export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
+
+export interface GenerateTask<T extends  ServiceWorkRoles>  {
   _id: string
   user: User // private
   assigned: User  // private
@@ -71,14 +47,21 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER >  {
   canceledAt: String
 }
 
-export type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>
+export type Task = GenerateTask<ServiceWorkRoles>
 
 
 // ---------------------------------------------------
 // ---------------------------------------------------
 
-// PARAMS
-
+ /**
+ * GetTasksParams is used to get a list of tasks with additional filtering options.
+ * 
+ * @param {GetListParams} params - The parameters used to get the list.
+ * @param {TaskStatus} [status] - The status of the task.
+ * @param {WorkRoles} [roleWorker] - The role of the worker.
+ * @param {string} [user] - The user associated with the task.
+ * @param {string} [assigned] - The user assigned to the task.
+ */
 export interface GetTasksParams extends GetListParams {
   status?: TaskStatus
   roleWorker?: WorkRoles

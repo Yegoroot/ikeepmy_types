@@ -1,24 +1,12 @@
-import { Coords, GetListParams } from "./common";
+import { GetListParams } from "./common";
 import { ErrorResponse, RESPONSE_MESSAGES } from "./response";
-import { Roles, User, WorkRoles } from "./user";
+import { ServicesMap, ServiceWorkRoles } from "./services";
+import { User, WorkRoles } from "./user";
 export declare const enum TaskStatus {
     NEW = "new",
     ASSIGNED = "assigned",
     CANCELED = "canceled",
     DONE = "done"
-}
-export interface DeleveryService {
-    datetime: string;
-    coords: Coords;
-}
-export interface WashingService {
-    datetime: string;
-    coords: Coords;
-    countCar: number;
-}
-interface ServicesMap {
-    [Roles.DELEVER]: DeleveryService;
-    [Roles.WASHER]: WashingService;
 }
 declare type TaskHistory = {
     user: User;
@@ -31,7 +19,7 @@ declare type Comment = {
     text: string;
     datetime: string;
 };
-export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER> {
+export interface GenerateTask<T extends ServiceWorkRoles> {
     _id: string;
     user: User;
     assigned: User;
@@ -46,7 +34,7 @@ export interface GenerateTask<T extends Roles.DELEVER | Roles.WASHER> {
     updatedAt: String;
     canceledAt: String;
 }
-export declare type Task = GenerateTask<Roles.DELEVER> | GenerateTask<Roles.WASHER>;
+export declare type Task = GenerateTask<ServiceWorkRoles>;
 export interface GetTasksParams extends GetListParams {
     status?: TaskStatus;
     roleWorker?: WorkRoles;
