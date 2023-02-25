@@ -8,8 +8,8 @@ interface CommonUserData {
 }
 export declare type WorkRoles = Roles.DELEVER | Roles.WASHER_CAR | Roles.WASHER_BUILD_PACKAGE | Roles.WASHER_BUILD_STANDART | Roles.USER | Roles.COMPANY;
 interface RolesInfoMap {
-    [Roles.DELEVER]: WasherCarUserData;
-    [Roles.WASHER_CAR]: DeleverUserData;
+    [Roles.DELEVER]: DeleverUserData;
+    [Roles.WASHER_CAR]: WasherCarUserData;
     [Roles.WASHER_BUILD_PACKAGE]: {};
     [Roles.WASHER_BUILD_STANDART]: {};
     [Roles.USER]: CommonUserData;

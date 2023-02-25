@@ -27,8 +27,8 @@ export type WorkRoles =
 
   // USER_INFO BY ROLES
 interface RolesInfoMap {
-  [Roles.DELEVER]: WasherCarUserData
-  [Roles.WASHER_CAR]: DeleverUserData
+  [Roles.DELEVER]: DeleverUserData 
+  [Roles.WASHER_CAR]: WasherCarUserData
   [Roles.WASHER_BUILD_PACKAGE]: {}
   [Roles.WASHER_BUILD_STANDART]: {}
   [Roles.USER]: CommonUserData

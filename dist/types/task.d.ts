@@ -35,6 +35,15 @@ export interface GenerateTask<T extends ServiceWorkRoles> {
     canceledAt: String;
 }
 export declare type Task = GenerateTask<ServiceWorkRoles>;
+/**
+* GetTasksParams is used to get a list of tasks with additional filtering options.
+*
+* @param {GetListParams} params - The parameters used to get the list.
+* @param {TaskStatus} [status] - The status of the task.
+* @param {WorkRoles} [roleWorker] - The role of the worker.
+* @param {string} [user] - The user associated with the task.
+* @param {string} [assigned] - The user assigned to the task.
+*/
 export interface GetTasksParams extends GetListParams {
     status?: TaskStatus;
     roleWorker?: WorkRoles;
