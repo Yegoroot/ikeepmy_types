@@ -30,26 +30,28 @@ interface WashingCarService {
 }
 
 interface WashingBuildService {
-  datetime: string
   coords: Coords
+  datetime: string
+  countMaids: number
+  volume: string // flat 2rooms, willa 3 rooms and so
 }
 
 export interface ServicesMap {
   [Roles.DELEVER]: DeleveryService
   [Roles.WASHER_CAR]: WashingCarService
-  [Roles.WASHER_BUILD_PACKAGE]: WashingBuildService
+  [Roles.WASHER_BUILD_DEEP]: WashingBuildService
   [Roles.WASHER_BUILD_STANDART]: WashingBuildService
 }
 export type ServiceWorkRoles = 
   Roles.DELEVER | 
   Roles.WASHER_CAR | 
-  Roles.WASHER_BUILD_PACKAGE | 
+  Roles.WASHER_BUILD_DEEP | 
   Roles.WASHER_BUILD_STANDART
 
   export const workerRoles = [
     Roles.COMPANY, 
     Roles.DELEVER, 
-    Roles.WASHER_BUILD_PACKAGE, 
+    Roles.WASHER_BUILD_DEEP, 
     Roles.WASHER_BUILD_STANDART, 
     Roles.WASHER_CAR
   ]

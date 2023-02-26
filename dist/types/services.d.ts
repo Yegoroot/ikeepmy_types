@@ -17,15 +17,17 @@ interface WashingCarService {
     countCar: number;
 }
 interface WashingBuildService {
-    datetime: string;
     coords: Coords;
+    datetime: string;
+    countMaids: number;
+    volume: string;
 }
 export interface ServicesMap {
     [Roles.DELEVER]: DeleveryService;
     [Roles.WASHER_CAR]: WashingCarService;
-    [Roles.WASHER_BUILD_PACKAGE]: WashingBuildService;
+    [Roles.WASHER_BUILD_DEEP]: WashingBuildService;
     [Roles.WASHER_BUILD_STANDART]: WashingBuildService;
 }
-export declare type ServiceWorkRoles = Roles.DELEVER | Roles.WASHER_CAR | Roles.WASHER_BUILD_PACKAGE | Roles.WASHER_BUILD_STANDART;
+export declare type ServiceWorkRoles = Roles.DELEVER | Roles.WASHER_CAR | Roles.WASHER_BUILD_DEEP | Roles.WASHER_BUILD_STANDART;
 export declare const workerRoles: Roles[];
 export {};

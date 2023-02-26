@@ -20,7 +20,7 @@ interface CommonUserData {
 export type WorkRoles = 
   Roles.DELEVER | 
   Roles.WASHER_CAR | 
-  Roles.WASHER_BUILD_PACKAGE | 
+  Roles.WASHER_BUILD_DEEP | 
   Roles.WASHER_BUILD_STANDART | 
   Roles.USER | 
   Roles.COMPANY // workerRoles() func in utils 
@@ -29,7 +29,7 @@ export type WorkRoles =
 interface RolesInfoMap {
   [Roles.DELEVER]: DeleverUserData 
   [Roles.WASHER_CAR]: WasherCarUserData
-  [Roles.WASHER_BUILD_PACKAGE]: {}
+  [Roles.WASHER_BUILD_DEEP]: {}
   [Roles.WASHER_BUILD_STANDART]: {}
   [Roles.USER]: CommonUserData
   [Roles.COMPANY]: CommonCompanyData
@@ -44,7 +44,7 @@ export interface GenerateRolesInfo<T extends WorkRoles>  {
 export type RolesInfo = 
 GenerateRolesInfo<Roles.DELEVER> | 
 GenerateRolesInfo<Roles.WASHER_CAR> | 
-GenerateRolesInfo<Roles.WASHER_BUILD_PACKAGE> | 
+GenerateRolesInfo<Roles.WASHER_BUILD_DEEP> | 
 GenerateRolesInfo<Roles.WASHER_BUILD_STANDART> | 
 GenerateRolesInfo<Roles.USER> | 
 GenerateRolesInfo<Roles.COMPANY>
@@ -90,8 +90,8 @@ export const enum Roles {
   COMPANY= 'company',
   ADMIN= 'admin',
   WASHER_CAR= 'washer_car',
-  WASHER_BUILD_STANDART='washer_build_standart',
-  WASHER_BUILD_PACKAGE='washer_build_package',
+  WASHER_BUILD_STANDART='washer_build_standart', // once, week package, month package
+  WASHER_BUILD_DEEP='washer_build_deep',
   DELEVER= 'delever'
 }
 

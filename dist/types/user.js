@@ -22,6 +22,6 @@ var Roles;
     Roles["ADMIN"] = "admin";
     Roles["WASHER_CAR"] = "washer_car";
     Roles["WASHER_BUILD_STANDART"] = "washer_build_standart";
-    Roles["WASHER_BUILD_PACKAGE"] = "washer_build_package";
+    Roles["WASHER_BUILD_DEEP"] = "washer_build_deep";
     Roles["DELEVER"] = "delever";
 })(Roles = exports.Roles || (exports.Roles = {}));
