@@ -11,12 +11,12 @@ interface DeleveryService {
     datetime: string;
     coords: Coords;
 }
-interface WashingCarService {
+export interface WashingCarService {
     datetime: string;
     coords: Coords;
     countCar: number;
 }
-interface WashingBuildService {
+export interface WashingBuildService {
     coords: Coords;
     datetime: string;
     countMaids: number;
@@ -25,9 +25,9 @@ interface WashingBuildService {
 export interface ServicesMap {
     [Roles.DELEVER]: DeleveryService;
     [Roles.WASHER_CAR]: WashingCarService;
-    [Roles.WASHER_BUILD_DEEP]: WashingBuildService;
-    [Roles.WASHER_BUILD_STANDART]: WashingBuildService;
+    [Roles.PLACE_DEEP_CLEANING]: WashingBuildService;
+    [Roles.PLACE_STANDART_CLEANING]: WashingBuildService;
 }
-export declare type ServiceWorkRoles = Roles.DELEVER | Roles.WASHER_CAR | Roles.WASHER_BUILD_DEEP | Roles.WASHER_BUILD_STANDART;
+export declare type ServiceWorkRoles = Roles.DELEVER | Roles.WASHER_CAR | Roles.PLACE_DEEP_CLEANING | Roles.PLACE_STANDART_CLEANING;
 export declare const workerRoles: Roles[];
 export {};

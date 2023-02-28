@@ -4,8 +4,8 @@ exports.workerRoles = void 0;
 exports.workerRoles = [
     "company" /* Roles.COMPANY */,
     "delever" /* Roles.DELEVER */,
-    "washer_build_deep" /* Roles.WASHER_BUILD_DEEP */,
-    "washer_build_standart" /* Roles.WASHER_BUILD_STANDART */,
+    "place_deep_cleaning" /* Roles.PLACE_DEEP_CLEANING */,
+    "place_standart_cleaning" /* Roles.PLACE_STANDART_CLEANING */,
     "washer_car" /* Roles.WASHER_CAR */
 ];
 // ---------------------------------------------------
