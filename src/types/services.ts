@@ -29,8 +29,9 @@ export interface WashingCarService {
   countCar: number
 }
 
-export interface WashingBuildService {
+export interface CleaningService {
   coords: Coords
+  package: 'two-weeks' | 'month' | undefined // пакет мойка
   datetime: string
   countMaids: number
   volume: string // flat 2rooms, willa 3 rooms and so
@@ -39,8 +40,8 @@ export interface WashingBuildService {
 export interface ServicesMap {
   [Roles.DELEVER]: DeleveryService
   [Roles.WASHER_CAR]: WashingCarService
-  [Roles.PLACE_DEEP_CLEANING]: WashingBuildService
-  [Roles.PLACE_STANDART_CLEANING]: WashingBuildService
+  [Roles.PLACE_DEEP_CLEANING]: CleaningService
+  [Roles.PLACE_STANDART_CLEANING]: CleaningService
 }
 export type ServiceWorkRoles = 
   Roles.DELEVER | 
