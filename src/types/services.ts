@@ -33,7 +33,7 @@ export interface CleaningService {
   coords: Coords
   package: 'week' | 'month' | undefined // пакет мойка
   datetime: string
-  numberCleaners: number
+  numberCleaners: string
   premise: string // flat 2rooms, willa 3 rooms and so
 }
 

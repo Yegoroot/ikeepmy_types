@@ -20,7 +20,7 @@ export interface CleaningService {
     coords: Coords;
     package: 'week' | 'month' | undefined;
     datetime: string;
-    numberCleaners: number;
+    numberCleaners: string;
     premise: string;
 }
 export interface ServicesMap {
