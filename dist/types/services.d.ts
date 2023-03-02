@@ -17,11 +17,12 @@ export interface WashingCarService {
     countCar: number;
 }
 export interface CleaningService {
-    coords: Coords;
-    package: 'week' | 'month' | undefined;
-    datetime: string;
-    numberCleaners: string;
+    package?: 'week' | 'month' | undefined;
+    numberCleaners?: number;
+    furniture?: boolean;
     premise: string;
+    coords: Coords;
+    datetime: string;
 }
 export interface ServicesMap {
     [Roles.DELEVER]: DeleveryService;
