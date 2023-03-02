@@ -18,10 +18,10 @@ export interface WashingCarService {
 }
 export interface CleaningService {
     coords: Coords;
-    package: 'two-weeks' | 'month' | undefined;
+    package: 'week' | 'month' | undefined;
     datetime: string;
-    countMaids: number;
-    volume: string;
+    numberCleaners: number;
+    premise: string;
 }
 export interface ServicesMap {
     [Roles.DELEVER]: DeleveryService;

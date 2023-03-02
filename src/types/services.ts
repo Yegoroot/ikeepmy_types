@@ -31,10 +31,10 @@ export interface WashingCarService {
 
 export interface CleaningService {
   coords: Coords
-  package: 'two-weeks' | 'month' | undefined // пакет мойка
+  package: 'week' | 'month' | undefined // пакет мойка
   datetime: string
-  countMaids: number
-  volume: string // flat 2rooms, willa 3 rooms and so
+  numberCleaners: number
+  premise: string // flat 2rooms, willa 3 rooms and so
 }
 
 export interface ServicesMap {
