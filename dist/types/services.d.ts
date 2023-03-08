@@ -16,7 +16,11 @@ export interface WashingCarService {
     coords: Coords;
     countCar: number;
 }
-export interface CleaningService {
+export interface CleaningType {
+    cleaningType?: 'standart' | 'package' | 'deep';
+    role: Roles.PLACE_DEEP_CLEANING | Roles.PLACE_STANDART_CLEANING | Roles.WASHER_CAR;
+}
+export interface CleaningService extends CleaningType {
     package?: 'week' | 'month' | undefined;
     numberCleaners?: number;
     furniture?: boolean;

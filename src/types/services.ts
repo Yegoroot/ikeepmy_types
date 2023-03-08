@@ -29,13 +29,18 @@ export interface WashingCarService {
   countCar: number
 }
 
-export interface CleaningService {
+export interface CleaningType {
+  cleaningType?: 'standart' | 'package' | 'deep'
+  role: Roles.PLACE_DEEP_CLEANING | Roles.PLACE_STANDART_CLEANING | Roles.WASHER_CAR
+}
+
+export interface CleaningService extends CleaningType {
   package?: 'week' | 'month' | undefined // пакет мойка
   numberCleaners?: number
   furniture?: boolean
   premise: string // flat 2rooms, willa 3 rooms and so
   coords: Coords
-  datetime: string
+  datetime: string,
 }
 
 export interface ServicesMap {
